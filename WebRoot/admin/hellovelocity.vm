@@ -1,0 +1,13 @@
+<html>
+
+<title>Hello Velocity</title>
+
+<body>
+
+Welcome $name to Javayou.com!
+
+today is $date.
+
+</body>
+
+</html> 

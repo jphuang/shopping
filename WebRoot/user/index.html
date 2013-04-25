@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>会员管理</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
+        <link href="../css/my.css" rel="stylesheet">
+    </head>
+<body>
+<div class="container">
+	<table class="table-bordered">
+		<tbody>
+			<tr>
+				<th width="10%">id</th>
+				<th width="15%">用户名</th>
+				<th width="15%">电话</th>
+				<th width="35%">地址</th>
+				<th width="15%">注册时间</th>
+				<th width="10%">操作</th>
+			</tr>
+			
+			<#list userPage.getList() as x>
+			<tr>
+				<td >${x.id}</td>
+				<td >${x}</td>
+				<td >${x.addr}</td>
+			
+					<a href="#">edit</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

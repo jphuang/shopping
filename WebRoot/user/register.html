@@ -10,7 +10,7 @@
     <body bgcolor="#E6E6FA">
         <div class="container" >
        
-       	    <form class="well form-inline" action="#" method="get">
+       	    <form class="well form-inline" action="/user/register" method="get">
        	    	<h1>用户注册</h1>
 			    <input type="text" class="input-large" placeholder="用户名" name="username"> <i class="icon-envelope"></i><br/>
 			    <span></span><br/>
@@ -26,7 +26,7 @@
 			    
 			    <input type="text" class="input-xlarge" placeholder="地址" name="addr"><i class="icon-home"></i><br/>
 			    <span></span><br/>
-			    
+			    <input type="hidden"  name="reg" value="ok"/>
 			    <button type="submit" class="btn btn-primary">确认</button>
     		</form>
         </div>

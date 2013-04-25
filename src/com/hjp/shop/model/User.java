@@ -1,8 +1,15 @@
 package com.hjp.shop.model;
 
+import java.awt.List;
 import java.sql.Timestamp;
 
-public class User {
+import com.jfinal.plugin.activerecord.Model;
+import com.jfinal.plugin.activerecord.Page;
+
+public class User extends Model<User> {
+
+	public static User dao = new User();
+	
 	private String addr;
 	private int id;
 	private String password;
@@ -14,12 +21,13 @@ public class User {
 		return addr;
 	}
 
+
 	public int getId() {
 		return id;
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public String getPhone() {
@@ -53,9 +61,20 @@ public class User {
 	public void setRdate(Timestamp rdate) {
 		this.rdate = rdate;
 	}
-
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public java.util.List<User> getAllUser() {
+		return this.find("select * from tbl_user");
+	}
 
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+	
 }

@@ -1,32 +1,14 @@
 package com.hjp.shop.controller;
 
-import java.nio.channels.SelectableChannel;
 import java.util.Date;
-
-import org.eclipse.jetty.jndi.java.javaNameParser;
 
 import com.hjp.shop.model.User;
 import com.jfinal.core.Controller;
-import com.jfinal.plugin.activerecord.Page;
 
 public class UserController extends Controller {
 	public void index() {
-		//this.setAttr("userPage", User.dao.paginate(1, 10, "select * ", " from tbl_user"));
 		
-		java.util.List<User> lists = User.dao.find("select * from tbl_user");
-		
-		System.out.println(lists);
-		
-		System.out.println(lists.size());
-		
-		for (User user : lists) {
-			System.out.println(user instanceof User);
-			System.out.println(user);
-			System.out.println(user.getPassword());
-			
-		}
-		
-
+		this.setAttr("userPage", User.dao.getAlldate());
 	}
 
 
@@ -57,6 +39,11 @@ public class UserController extends Controller {
 			//renderHtml("×¢²á³É¹¦£¬ÇëµÇÂ½");
 		//}
 		
+	}
+	
+	public void delete() {
+		User.dao.deleteById(getParaToInt());
+		redirect("/user/index");
 	}
 	
 }

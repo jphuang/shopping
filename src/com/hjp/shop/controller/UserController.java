@@ -13,7 +13,8 @@ public class UserController extends Controller {
 
 
 	public void register() {
-		if(this.getPara("reg").equals("ok"))
+
+		if(getPara("reg")!= null && getPara("reg").equals("ok"))
 		{
 			String username = this.getPara("username");
 			String password = this.getPara("password");
@@ -44,6 +45,11 @@ public class UserController extends Controller {
 	public void delete() {
 		User.dao.deleteById(getParaToInt());
 		redirect("/user/index");
+	}
+	
+	public void verify() {
+		String username = getPara("name");
+		renderText(User.dao.verify(username));
 	}
 	
 }

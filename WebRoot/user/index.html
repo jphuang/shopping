@@ -6,6 +6,10 @@
         <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
         <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
         <link href="../css/my.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/bootstrap-alert.js"></script>
+        <script type="text/javascript" src="../js/my.js"> </script>
+       
     </head>
 <body>
 <div class="container">
@@ -28,7 +32,7 @@
 				<td >${x.addr}</td>
 				<td >${x.rdate}</td>
 				<td>
-					<a href="/user/delete/${x.id}">删除</a>
+					<a href="/user/delete/${x.id}" onClick="return confirm('确认删除');">删除</a>
 				</td>
 			</tr>
 			</#list>

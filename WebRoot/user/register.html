@@ -6,14 +6,28 @@
         <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
         <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
         <link href="../css/my.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/my.js"></script>
+        
     </head>
-    <body bgcolor="#E6E6FA">
+    <body >
         <div class="container" >
        
-       	    <form class="well form-inline" action="/user/register" method="get">
+       	    <form class="well form-inline" action="/user/register" method="post" >
        	    	<h1>用户注册</h1>
-			    <input type="text" class="input-large" placeholder="用户名" name="username"> <i class="icon-envelope"></i><br/>
-			    <span></span><br/>
+			    <input type="text" class="input-large" placeholder="用户名" name="username" id="username">
+			    <input type="button" class="btn" value="检测" onclick="verify()">
+       
+        		<!--正常提示 Start-->
+                <!-- class属性用于连接css  -->
+                <div id="div_uname_rule" >
+                       <span class="alert">6~18个字符，包括字母、数字、下划线</span>
+                       <span class="alert">字母开头，字母和数字结尾，不区分大小写</span>
+                </div>
+                <!--正常提示 End-->
+                <!--错误提示 Start-->
+                 <div id="div_uname_err_info" ></div>  
+                <!--错误提示 End--><br/>
 			    
 			    <input type="password" class="input-large" placeholder="密码" name="password"><br/>
 			    <span></span><br/>
@@ -27,16 +41,15 @@
 			    <input type="text" class="input-xlarge" placeholder="地址" name="addr"><i class="icon-home"></i><br/>
 			    <span></span><br/>
 			    <input type="hidden"  name="reg" value="ok"/>
-			    <button type="submit" class="btn btn-primary">确认</button>
+			    <button type="submit" class="btn btn-primary" >确认</button>
     		</form>
         </div>
-
-        <div class="container" >
-            <footer class="footer">
+		<footer class="footer ">
+        	<div class="container " >
 	            <p class="pull-right"><a href="#">返回顶部</a></p>
 	            <p>网站地图</p>
 	            <p>版权声明： <a href="#">SHOP BY 0.1</a>.</p>
-            </footer>
-        </div>
+        	</div>
+        </footer>
     </body>
 </html>

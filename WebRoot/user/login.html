@@ -2,12 +2,22 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>会员注册</title>
+        <title>会员登陆</title>
         <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
         <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
         <link href="../css/my.css" rel="stylesheet">
     </head>
 	<body>
-		<h1>登陆</h1>
+		<br/><br/><br/><br/><br/><br/><br/>
+		<div class="span4 offset7">
+			<h1 class="offset1">登陆</h1>
+			<form class="well form-inline" action="/user/login" method="post" ><br/>
+				 <input type="text" class="input-large" placeholder="用户名" name="username" id="username"><br/><br/>
+				 <input type="password" class="input-large" placeholder="密码" name="password" id="password"><br/><br/>
+				  <input type="hidden"  name="login" value="ok"/>
+				 <button type="submit" class="btn btn-primary" >登陆</button>&nbsp;&nbsp;&nbsp;
+				 <input type="reset" class="btn" ></input>
+			</form>
+		</div>
 	</body>
 </html>

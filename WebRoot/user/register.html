@@ -11,7 +11,6 @@
         
     </head>
     <body >
-    	<h1>fuck</h1>
         <div class="container" >
        
        	    <form class="well form-inline" action="/user/register" method="post" >
@@ -22,19 +21,19 @@
         		<!--正常提示 Start-->
                 <!-- class属性用于连接css  -->
                 <div id="div_uname_rule" >
-                <hr>
+                       <br/>
+                       <span class="alert">6~18个字符，包括字母、数字、下划线</span>
                        <span class="alert ">6~18个字符，包括字母、数字、下划线</span>
-                       
                 </div>
                 <!--正常提示 End-->
                 <!--错误提示 Start-->
                  <div id="div_uname_err_info" ></div>  
                 <!--错误提示 End--><br/>
 			    
-			    <input type="password" class="input-large" placeholder="密码" name="password"><br/>
+			    <input type="password" class="input-large" placeholder="密码" name="password" id="password"><br/>
 			    <span></span><br/>
 			    
-			    <input type="password" class="input-large" placeholder="确认密码" name="password1"><br/>
+			    <input type="password" class="input-large" placeholder="确认密码" name="password1" id="password1"><br/>
 			    <span></span><br/>
 			   
 			    <input type="text" class="input-large" placeholder="电话" name="phone"><br/>
@@ -47,7 +46,7 @@
     		</form>
         </div>
 		<footer class="footer ">
-        	<div class="container " >
+        	<div class="container" >
 	            <p class="pull-right"><a href="#">返回顶部</a></p>
 	            <p>网站地图</p>
 	            <p>版权声明： <a href="#">SHOP BY 0.1</a>.</p>

@@ -20,4 +20,9 @@ public class User extends Model<User> {
 		String sqlString = "select * from tbl_user where username='" + username + "'";
 		return User.dao.findFirst(sqlString)==null ? "yes" : "no";
 	}
+	
+	public String getPasswordByusername(String username) {
+		String sqlString = "select password from tbl_user where username = '" + username + "'";
+		return User.dao.findFirst(sqlString).getStr("password");
+	}
 }

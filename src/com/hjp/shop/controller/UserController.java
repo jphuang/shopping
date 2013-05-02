@@ -9,19 +9,25 @@ import com.jfinal.core.Controller;
 public class UserController extends Controller {
 	
 	public void index() {
+		renderHtml("<div class='span3 offset4'><h1>Hello,welcome you</h1></div>");
+	}
+	
+	public void admin() {
 		this.setAttr("userPage", User.dao.getAlldate());
 	}
-
+	
 	public void register(){
 
 		if (getPara("reg") != null && getPara("reg").equals("ok")) {
 			String username = this.getPara("username");
 			String password = this.getPara("password");
-			String phone = this.getPara("phone");
-			String addr = this.getPara("addr");
+			String phone    = this.getPara("phone");
+			String addr     = this.getPara("addr");
 
 			
 			password = EncoderByMd5(password);
+			
+			System.out.println(password);
 			
 			boolean isSave = new User().set("username", username)
 					.set("password", password).set("phone", phone)
@@ -36,17 +42,26 @@ public class UserController extends Controller {
 	}
 
 	public void login() {
-
-		render("login.html");
-		// if (this.getPara("reg").equals("yes")) {
-		// renderHtml("×¢²á³É¹¦£¬ÇëµÇÂ½");
-		// }
+		if (getPara("login") == null || !getPara("login").equals("ok")) {
+			render("login.html");
+		}else {
+			String usernameString = getPara("username");
+			String passwordString = getPara("password");
+			
+			passwordString = EncoderByMd5(passwordString);
+			
+			if (passwordString.equals(User.dao.getPasswordByusername(usernameString))) {
+				redirect("/user/admin");
+			}
+		}
+		
+		
 
 	}
 
 	public void delete() {
 		User.dao.deleteById(getParaToInt());
-		redirect("/user/index");
+		redirect("/user/admin");
 	}
 
 	public void verify() {

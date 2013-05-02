@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>后台管理</title>
+        <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+        <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+        <script src="http://files.cnblogs.com/rubylouvre/bootstrap-transition.js"></script>
+        <script src="http://files.cnblogs.com/rubylouvre/bootstrap-collapse.js"></script>
+        
+    </head>
+	<body>
+		<br/><br/><br/><br/>
+		<div class="span2 offset2">
+			<button class="btn btn-danger" data-toggle="collapse"
+				data-target="#demo1">会员管理</button>
+			<br />
+			<div id="demo1" class="collapse">
+				<div><a href="user/admin" target="main">用户列表</a></div>
+				<div>第二列</div>
+				<div>第三列</div>
+			</div>
+			<button class="btn btn-primary" data-toggle="collapse"
+				data-target="#demo2">产品管理</button>
+			<br />
+			<div id="demo2" class="collapse">
+				<div>第一列</div>
+				<div>第二列</div>
+				<div>第三列</div>
+			</div>
+			<button class="btn btn-danger" data-toggle="collapse"
+				data-target="#demo3">订单管理</button>
+			<br />
+			<div id="demo3" class="collapse">
+				<div>第一列</div>
+				<div>第二列</div>
+				<div>第三列</div>
+			</div>
+			<button class="btn btn-primary" data-toggle="collapse"
+				data-target="#demo4">系统管理</button>
+			<br />
+			<div id="demo4" class="collapse">
+				<div>第一列</div>
+				<div>第二列</div>
+				<div>第三列</div>
+			</div>
+		</div>
+		<iframe name="main" width="1000px"  height="280px">
+		</iframe>
+	</body>
+</html>

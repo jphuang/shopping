@@ -2,6 +2,7 @@
 package config;
 
 import com.hjp.shop.controller.AdminControlller;
+import com.hjp.shop.controller.IndexController;
 import com.hjp.shop.controller.UserController;
 import com.hjp.shop.model.User;
 import com.jfinal.config.*;
@@ -20,6 +21,7 @@ public class ShopConfig extends JFinalConfig{
 	public void configRoute(Routes me) {
 		me.add("/user",UserController.class);
 		me.add("/admin",AdminControlller.class);
+		me.add("/",IndexController.class);
 		
 	}
 

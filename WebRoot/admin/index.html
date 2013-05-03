@@ -11,15 +11,14 @@
     </head>
 	<body>
 		<br/><br/><br/><br/>
-		<div class="span2 offset2">
+		<div class="span2 ">
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo1">会员管理</button>
-			<br />
-			<div id="demo1" class="collapse">
-				<div><a href="user/admin" target="main">用户列表</a></div>
-				<div><a href="user/register" target="main">添加用户</a></div>
-				<div>搜索用户</div>
-			</div>
+			<ul id="demo1" class="collapse nav nav-pills nav-stacked">
+				<li><a href="admin/listUser" target="main">用户列表</a></li>
+				<li><a href="user/register" target="main">添加用户</a></li>
+				<li><a href="admin/searchUser" target="main">查找用户</a></li>
+			</ul>
 			<button class="btn btn-primary" data-toggle="collapse"
 				data-target="#demo2">产品管理</button>
 			<br />
@@ -55,7 +54,7 @@
 				<div>退出管理</div>
 			</div>
 		</div>
-		<iframe name="main" width="1000px"  height="600px">
+		<iframe name="main" width="1000px"  height="600px" style="float:left">
 		</iframe>
 	</body>
 </html>

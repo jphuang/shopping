@@ -14,7 +14,6 @@ public class ShopConfig extends JFinalConfig{
 	@Override
 	public void configConstant(Constants me) {
 		me.setDevMode(true);
-		//me.setViewType(ViewType.VELOCITY);
 	}
 
 	@Override

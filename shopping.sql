@@ -39,7 +39,7 @@ create table tbl_salesorder
 	id int primary key auto_increment,
 	userid int,
 	addr varchar(255),
-	odate datatime,
+	odate datetime,
 	status int
 );
 

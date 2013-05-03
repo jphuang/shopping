@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+        <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+</head>
+<body>
+	<div class="span3">
+		<form action="searchUser">
+			<h5> 请输入你要查找的用户名 </h5>
+			<input type="text" class="search-query" placeholder="Search" name="username"/><br><br>
+			<button class="btn btn-primary" id="search" >查找</button>
+		</form>
+	</div>
+	
+	<#if user ??>
+		<div class="container">
+			<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<th width="10%">id</th>
+					<th width="15%">用户名</th>
+					<th width="15%">电话</th>
+					<th width="30%">地址</th>
+					<th width="20%">注册时间</th>
+					<th width="10%">操作</th>
+				</tr>
+				
+				
+				<tr>
+					<td >${user.id}</td>
+					<td >${user.username}</td>
+					<td >${user.phone}</td>
+					<td >${user.addr}</td>
+					<td >${user.rdate}</td>
+					<td>
+						<a href="/user/delete/${x.id}" onClick="return confirm('确认删除');">删除</a>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+	</#if>
+</body>
+</html>

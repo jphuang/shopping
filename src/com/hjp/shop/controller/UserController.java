@@ -2,17 +2,22 @@ package com.hjp.shop.controller;
 
 import java.util.Date;
 
+import com.hjp.shop.Interceptor.UserInterceptor;
 import com.hjp.shop.model.User;
+import com.jfinal.aop.Before;
+import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.core.Controller;
 
+@Before(UserInterceptor.class)
 public class UserController extends Controller {
-
+	
+	@ClearInterceptor
 	public void index() {
 		renderHtml("<div class='span3 offset4'><h1>Hello,welcome you</h1></div>");
 	}
 
 
-
+	@ClearInterceptor
 	public void register() {
 
 		if (getPara("reg") != null && getPara("reg").equals("ok")) {
@@ -43,10 +48,36 @@ public class UserController extends Controller {
 		User.dao.deleteById(getParaToInt());
 		redirect("/user/admin");
 	}
-
+	
+	public void selfServer() {
+		User user = (User)getSessionAttr("user");
+		setAttr("user", user);
+		render("selfServer.html");
+	}
+	
+	@ClearInterceptor
 	public void verify() {
 		String username = getPara("name");
 		renderText(User.dao.verify(username));
+	}
+	
+	@ClearInterceptor
+	public void login() {
+		if (getPara("login") == null || !getPara("login").equals("ok")) {
+			render("/index.html");
+		} else {
+			String usernameString = getPara("username");
+			String passwordString = getPara("password");
+
+			passwordString = User.EncoderByMd5(passwordString);
+
+			if (passwordString.equals(User.dao
+					.getPasswordByusername(usernameString)))
+			{
+				this.setSessionAttr("user", User.dao.getUserByName(usernameString));
+				redirect("/user/selfServer");
+			}
+		}
 	}
 
 	

@@ -12,12 +12,21 @@ public class User extends Model<User> {
 	 * 
 	 */
 	private static final long serialVersionUID = 3025124637286140521L;
+	
+	private static final int pageSize = 3;	
+	
 	public static User dao = new User();
 	
-	public Page<User> getAlldate() {
-		return this.paginate(1, 10, "select * ", " from tbl_user order by id asc");
+	public Page<User> getAlldate(int pageNo) {
+		
+		return this.paginate(pageNo,User.pageSize, "select * ", " from tbl_user order by id asc");
 	}
 	
+	/**
+	 *检查数据库中有没有这个用户名
+	 * @param username String  要检查的用户名
+	 * @return String 没有返回yes，有返回no
+	 */
 	public String verify(String username) {
 		String sqlString = "select * from tbl_user where username='" + username + "'";
 		return User.dao.findFirst(sqlString)==null ? "yes" : "no";

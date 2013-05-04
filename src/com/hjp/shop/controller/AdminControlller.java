@@ -1,16 +1,19 @@
 package com.hjp.shop.controller;
 
+import java.util.Date;
+
 import com.hjp.shop.Interceptor.AdminInterceptor;
 import com.hjp.shop.model.User;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.core.Controller;
+import com.mchange.v2.c3p0.impl.NewPooledConnection;
 
 @Before(AdminInterceptor.class)
 public class AdminControlller extends Controller {
 
 	public void index() {
-
+		
 	}
 	
 	public void searchUser() {
@@ -19,7 +22,34 @@ public class AdminControlller extends Controller {
 	}
 	
 	public void listUser() {
-		this.setAttr("userPage", User.dao.getAlldate());
+		int pageNo;
+		if (getPara()!=null) {
+			try {
+				pageNo = getParaToInt();
+				if (pageNo <1 ) {
+					pageNo = 1;
+				}
+			} catch (Exception e) {
+				pageNo = 1;
+				e.printStackTrace();
+			}
+		}else {
+			pageNo = 1;
+		}
+		this.setAttr("userPage", User.dao.getAlldate(pageNo));
+		setAttr("pageNo",pageNo);
+	}
+	
+	public void addUser() {
+		String username = getPara("username");
+		if (username != null) {
+			String password = User.EncoderByMd5(username + new Date()).substring(0,6);
+			User user = new User().set("username", username).set("password", User.EncoderByMd5(password)).set("rdate",new Date()).set("phone", "10086").set("addr", "ÇëÐÞ¸ÄÄãµÄµØÖ·");
+			if(user.save()){
+				user.set("password", password);
+				setAttr("user",user);
+			}
+		}
 	}
 	
 	@ClearInterceptor

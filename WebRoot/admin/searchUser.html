@@ -6,10 +6,10 @@
         <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
 </head>
 <body>
-	<div class="span3">
+	<div class="container">
 		<form action="searchUser">
 			<h5> 请输入你要查找的用户名 </h5>
-			<input type="text" class="search-query" placeholder="Search" name="username"/><br><br>
+			<input type="text" class="search-query" placeholder="Search" name="username"/>
 			<button class="btn btn-primary" id="search" >查找</button>
 		</form>
 	</div>
@@ -35,7 +35,7 @@
 					<td >${user.addr}</td>
 					<td >${user.rdate}</td>
 					<td>
-						<a href="/user/delete/${x.id}" onClick="return confirm('确认删除');">删除</a>
+						<a href="/user/delete/${user.id}" onClick="return confirm('确认删除');">删除</a>
 					</td>
 				</tr>
 				

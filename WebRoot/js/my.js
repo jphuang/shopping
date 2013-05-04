@@ -41,8 +41,8 @@ function chkPassword() {
 	}
 	   return 1;
 }
+
 $(document).ready(function() {
-	$(".collapse").collapse();
 	
 	/** ----------- 用户名输入框事件 ----------- */
 	// 当文本框成为焦点时

@@ -25,11 +25,7 @@ public class UserController extends Controller {
 			String password = this.getPara("password");
 			String phone = this.getPara("phone");
 			String addr = this.getPara("addr");
-
 			password = User.EncoderByMd5(password);
-
-			System.out.println(password);
-
 			boolean isSave = new User().set("username", username)
 					.set("password", password).set("phone", phone)
 					.set("addr", addr).set("rdate", new Date()).save();

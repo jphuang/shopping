@@ -13,7 +13,7 @@ import com.mchange.v2.c3p0.impl.NewPooledConnection;
 public class AdminControlller extends Controller {
 
 	public void index() {
-		
+		render("index.html");
 	}
 	
 	public void searchUser() {
@@ -38,6 +38,7 @@ public class AdminControlller extends Controller {
 		}
 		this.setAttr("userPage", User.dao.getAlldate(pageNo));
 		setAttr("pageNo",pageNo);
+		render("listUser.html");
 	}
 	
 	public void addUser() {

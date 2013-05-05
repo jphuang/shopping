@@ -10,9 +10,10 @@ public class AdminInterceptor implements Interceptor {
 		User user = (User) ai.getController().getSessionAttr("user");
 		if (user != null && user.get("username").equals("admin")) {
 			ai.invoke();
-		} else {
+		} else{
 			ai.getController().redirect("/admin/login");
 		}
+	
 	}
 
 }

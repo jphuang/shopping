@@ -76,5 +76,11 @@ public class UserController extends Controller {
 		}
 	}
 
-	
+	public void userinfo(){
+		String info = this.getPara(0);
+		User user = (User)getSessionAttr("user");
+		setAttr("user", user);
+		if(info.equals("info")) render("/user/userinfo.html");
+		else if(info.equals("update")) render("/user/userUpdate.html");
+	}
 }

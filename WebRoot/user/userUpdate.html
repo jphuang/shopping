@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet"	href="../css/bootstrap.min.css" />
+	<script src="../js/jquery.js"></script>
+	</head>
+<body>
+<#if user ??>
+	<div class="container">
+		<label >用户名</label>
+		<input type="text" name="username" class="input-large" readonly="readonly" value="${user.username}"/><br/>
+		<label>电 &nbsp;&nbsp;话</label>
+		<input type="text" name="phone" class="input-large" value="${user.phone}"/><br/>
+		<label >地 &nbsp;&nbsp;址</label>
+		<input type="text" name="addr" class="input-xlarge" value="${user.addr}"/><br/>
+		<button class="btn btn-primary">修改</button>
+	</div>
+	</#if>
+</body>
+</html>

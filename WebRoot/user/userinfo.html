@@ -4,26 +4,20 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet"	href="../css/bootstrap.min.css" />
 	<script src="../js/jquery.js"></script>
+	<#include "../css/css.html"/>
 	</head>
 <body>
 	<br/>
 	<#if user ??>
-			<table class="table table-bordered table-striped">
-			<tbody>
-				<tr>
-					<th width="50%">用户名</th>
-					<td >${user.username}</td>
-				</tr>
-				<tr>
-					<th width="50%">电话</th>
-					<td >${user.phone}</td>
-				</tr>
-				<tr>
-					<th width="50%">地址</th>
-					<td >${user.addr}</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="container">
+			<label class="button rounded black">用户名 </label>
+			<input type="text" name="username" class="input-large button black" readonly="readonly" value="${user.username}"/><br/>
+			<label class="button rounded  black">电 &nbsp;&nbsp;话</label>
+			<input type="text" name="phone" class="input-large button black" readonly="readonly" value="${user.phone}"/><br/>
+			<label class="button rounded black">地 &nbsp;&nbsp;址</label>
+			<input type="text" name="addr" class="input-xlarge button black" readonly="readonly" value="${user.addr}"/><br/>
+			</div>
+	</div>
 	</#if>
 </body>
 </html>

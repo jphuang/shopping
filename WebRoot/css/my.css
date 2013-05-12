@@ -1,5 +1,7 @@
 body{
-	background-color:#EEEEFF;
+    background: #f8fcd4;
+  	background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+  	background-attachment: fixed;
 }
 
 footer {

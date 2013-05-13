@@ -1,0 +1,263 @@
+<link rel="shortcut icon" href="http://www.w3cplus.com/sites/all/themes/marvin/favicon.ico">
+<script type="text/javascript" charset="UTF-8" src="http://www.w3cplus.com/demo/css3/prefixfree.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.w3cplus.com/demo/css3/base.css" media="all" />
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+
+body {
+  background: #f8fcd4;
+  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+  background-attachment: fixed;
+}
+
+.demo {
+  text-align: center;
+  display: block;
+  width: 800px;
+  margin: 50px auto;
+}
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url('font/entypo-webfont.eot');
+  src: url('font/entypo-webfont.eot?#iefix') format('embedded-opentype'),
+       url('font/entypo-webfont.woff') format('woff'),
+       url('font/entypo-webfont.ttf') format('truetype'),
+       url('font/entypo-webfont.svg#EntypoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.button, 
+.button-bevel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 7px 20px 9px;
+  margin: .5em .5em .5em 0;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  text-transform: capitalize;
+  transition: 0.1s linear;
+}
+
+.button {
+  border-radius: 2px;
+  box-shadow: inset rgba(255,255,255,0.3) 1px 1px 0;
+}
+.button:hover, 
+.button-bevel:hover {
+	color: #fff;
+	text-decoration: none;
+} 
+  
+.button:active {
+  box-shadow: inset rgba(0,0,0,0.4) 0px 0px 6px;
+}
+
+.rounded {
+	border-radius: 20px;
+}
+
+.orange {
+  background: rgb(255,183,0);
+  background: -*-linear-gradient(to bottom,  rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb700', endColorstr='#ff8c00',GradientType=0 );
+  border: 1px solid #e59500;
+}
+  
+.orange:hover {
+  background: rgb(255,203,72);
+  background: -*-linear-gradient(to bottom,  rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb48', endColorstr='#ff9c23',GradientType=0 );
+  }
+  
+.magenta {
+  background: rgb(255,130,172);
+  background: -*-linear-gradient(to bottom,  rgba(255,130,172,1) 0%,rgba(247,37,129,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff82ac', endColorstr='#f72581',GradientType=0 );
+  border: 1px solid #c60a56;
+}
+  
+.magenta:hover {
+  background: rgb(255,155,189);
+  background: -*-linear-gradient(to bottom,  rgba(255,155,189,1) 0%,rgba(248,62,143,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9bbd', endColorstr='#f83e8f',GradientType=0 );
+}
+
+.cyan {
+  background: rgb(130,207,241);
+  background: -*-linear-gradient(to bottom,  rgba(130,207,241,1) 0%,rgba(56,174,234,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82cff1', endColorstr='#38aeea',GradientType=0 );
+  border: 1px solid #3cafcf;
+}
+  
+.cyan:hover {
+  background: rgb(153,216,244);
+  background: -*-linear-gradient(to bottom,  rgba(153,216,244,1) 0%,rgba(79,183,236,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d8f4', endColorstr='#4fb7ec',GradientType=0 );
+  }
+  
+.red {
+  background: #e25b53;
+  background: -*-linear-gradient(to bottom,  #e25b53 0%,#dd2011 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e25b53', endColorstr='#dd2011',GradientType=0 );
+  border: 1px solid #c42222;
+}
+
+.red:hover {
+  background: #dd7671;
+  background: -*-linear-gradient(to bottom,  #dd7671 0%,#dd2011 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd7671', endColorstr='#dd2011',GradientType=0 );
+}
+
+.black {
+  background: #444444;
+  background: -*-linear-gradient(to bottom,  #444444 0%,#1c1c1c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#1c1c1c',GradientType=0 );
+  border: 1px solid #2a2a2a;
+}
+
+.black:hover {
+  background: #686868;
+  background: -*-linear-gradient(to bottom,  #686868 0%,#1c1c1c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#686868', endColorstr='#1c1c1c',GradientType=0 );
+  }
+.green {
+  background: #82cc5d;
+  background: -*-linear-gradient(to bottom,  #82cc5d 0%,#53b73c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82cc5d', endColorstr='#53b73c',GradientType=0 );
+  border: 1px solid #429E34;
+}
+
+.green:hover {
+  background: #99cc80;
+  background: -*-linear-gradient(to bottom,  #99cc80 0%,#53b73c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99cc80', endColorstr='#53b73c',GradientType=0 );
+}
+
+
+.button-bevel {
+  vertical-align: top;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 25px 12px;
+}
+  
+.button-bevel:active {
+  position: relative;
+  top: 5px;
+}
+  
+.button-bevel.orange {
+  box-shadow: #c46d00 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+}
+
+.button-bevel.orange:active {
+  box-shadow: #c46d00 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
+}
+  
+.button-bevel.magenta {
+  box-shadow: #ca075c 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+}
+
+.button-bevel.magenta:active {
+  box-shadow: #ca075c 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
+}
+  
+.button-bevel.cyan {
+  box-shadow: #1994d3 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+}
+
+.button-bevel.cyan:active {
+  box-shadow: #1994d3 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
+ }
+  
+.button-bevel.red {
+  box-shadow: #88180e 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+}
+
+.button-bevel.red:active {
+  box-shadow: #88180e 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
+}
+  
+.button-bevel.black {
+  box-shadow: #000 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px, inset rgba(255, 255, 255, 0.3) 0 0 3px;
+}
+
+.button-bevel.black:active {
+  box-shadow: #000 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px, inset rgba(255, 255, 255, 0.3) 0 0 3px;  
+}
+  
+.button-bevel.green {
+  box-shadow: #439230 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+}
+
+.button-bevel.green:active {
+  box-shadow: #439230 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
+}
+
+
+.button span, 
+.button-bevel span {
+  font-family: 'EntypoRegular';
+  font-size: 20px;
+  font-weight: normal;
+  vertical-align: middle; 
+  line-height: 0;
+  margin-right: .1em;
+}
+
+.refresh:after { content: "h"; font-size: 34px; }
+.shuffle:after { content: "f"; font-size: 34px; }
+.preview:after { content: "M"; font-size: 34px; }
+.tea:after { content: "u"; font-size: 34px; }
+.wifi:after { content: "T"; font-size: 34px; }
+.locator:after { content: "0"; font-size: 34px; }
+ 
+.rss:after { content: "S"; font-size: 34px; }
+.cloud:after { content: "y"; font-size: 34px; }
+.download:after { content: "w"; font-size: 34px; }
+.trash:after { content: "I"; font-size: 34px; }
+.rack:after { content: "t"; font-size: 34px; }
+.map:after { content: "1"; font-size: 34px; }
+ 
+.setting:after { content: "@"; font-size: 34px; }
+.identity:after { content: "."; font-size: 34px; }
+.navigation:after { content: "2"; font-size: 34px; }
+.gallery:after { content: "p"; font-size: 34px; }
+.email:after { content: "%"; font-size: 34px; }
+.users:after { content: "+"; font-size: 34px; }
+  
+.calendar:after { content: "P"; font-size: 34px; }
+.link:after { content: ">"; font-size: 34px; }
+.time:after { content: "N"; font-size: 34px; }
+.folder:after { content: "s"; font-size: 34px; }
+.tag:after { content: "C"; font-size: 34px; }
+.share:after { content: "5"; font-size: 34px; }
+ 
+.lock:after { content: "U"; font-size: 34px; }
+.unlock:after { content: "V"; font-size: 34px; }
+.mic:after { content: "O"; font-size: 34px; }
+.love:after { content: "6"; font-size: 34px; }
+.star:after { content: "7"; font-size: 34px; }
+.like:after { content: "8"; font-size: 34px; }
+  
+.phone:after { content: "!"; font-size: 34px; }
+.flag:after { content: "?"; font-size: 34px; }
+.adduser:after { content: "-"; font-size: 34px; }
+.attach:after { content: "'"; font-size: 34px; }
+.comment:after { content: ":"; font-size: 34px; }
+.edit:after { content: "&"; font-size: 34px; }
+  
+.upload:after { content: "v"; font-size: 34px; }
+.storage:after { content: "x"; font-size: 34px; }
+.photo:after { content: "D"; font-size: 34px; }
+.help:after { content: "K"; font-size: 34px; }
+.glass:after { content: "R"; font-size: 34px; }
+.print:after { content: "<"; font-size: 34px; }
+  
+.gadget:after { content: '"'; font-size: 34px; }
+
+</style>

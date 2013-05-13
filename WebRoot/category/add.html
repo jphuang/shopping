@@ -1,0 +1,35 @@
+<!DOCTYPE >
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+		 <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+		 
+		 <link rel="shortcut icon" href="http://www.w3cplus.com/sites/all/themes/marvin/favicon.ico">
+		<script type="text/javascript" charset="UTF-8" src="http://www.w3cplus.com/demo/css3/prefixfree.min.js"></script>
+		<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Arvo);
+		
+		body {
+		  background: #f8fcd4;
+		  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+		  background-attachment: fixed;
+		}
+		</style>
+</head>
+<body>
+	<div class="span4">
+		<h3 >添加商品根类别</h3>
+		<form action="add" class="well form-horizontal" method="post">	
+			<label ><strong>类型</strong></label>
+			<input type="text" name="name"  /><br>
+			<label ><strong>描述</strong></label>
+			<textarea  name="descr"></textarea><br/><br/>
+			<button type="submit" class="btn btn-primary">添加</button>
+		</form>
+		<#if info ??> 
+			<h2>${info}</h2>
+		</#if>
+	</div>
+</body>
+</html>

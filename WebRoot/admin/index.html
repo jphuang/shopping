@@ -7,7 +7,7 @@
         <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
         <script src="http://files.cnblogs.com/rubylouvre/bootstrap-transition.js"></script>
         <script src="http://files.cnblogs.com/rubylouvre/bootstrap-collapse.js"></script>
-        
+        <#include "../css/css.html"/>
     </head>
 	<body>
 		<br/><br/><br/><br/>
@@ -38,12 +38,12 @@
 			<button class="btn btn-primary" data-toggle="collapse"
 				data-target="#demo4">类别管理</button>
 			
-			<div id="demo4" class="collapse">
-				<div>类别显示</div>
-				<div>类别添加</div>
-				<div>类别删除</div>
-				<div>类别修改</div>
-			</div>
+			<ul id="demo4" class="collapse nav nav-pills nav-stacked">
+				<li><a href="/category/list" target="main">类别显示</a></li>
+				<li><a href="/category/add" target="main">类别添加</a></li>
+				<li><a href="/category/delete" target="main">类别删除</a></li>
+				<li><a href="/category/update" target="main">类别修改</a></li>
+			</ul>
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo5">系统管理</button>
 			
@@ -53,7 +53,7 @@
 				<div>退出管理</div>
 			</div>
 		</div>
-		<iframe name="main" width="1000px"  height="600px" style="float:left">
+		<iframe name="main" width="1000px"  height="600px" style="float:left" frameborder="no">
 		</iframe>
 	</body>
 </html>

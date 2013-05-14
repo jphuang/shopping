@@ -13,10 +13,15 @@ public class User extends Model<User> {
 	 */
 	private static final long serialVersionUID = 3025124637286140521L;
 	
-	private static final int pageSize = 3;	
+	private static final int pageSize = 5;	
 	
 	public static User dao = new User();
 	
+	/**
+	 * 取得数据库中的某一页数据
+	 * @param pageNo 第几页
+	 * @return  pageSize 条记录
+	 */
 	public Page<User> getAlldate(int pageNo) {
 		
 		return this.paginate(pageNo,User.pageSize, "select * ", " from tbl_user order by id asc");
@@ -31,11 +36,20 @@ public class User extends Model<User> {
 		String sqlString = "select * from tbl_user where username='" + username + "'";
 		return User.dao.findFirst(sqlString)==null ? "yes" : "no";
 	}
-	
+	/**
+	 * 根据用户名取得数据库User的一条记录
+	 * @param name String 用户名
+	 * @return  User 
+	 */
 	public User getUserByName(String name){
 		String sqlString = "select * from tbl_user where username = '" + name + "'";
 		return User.dao.findFirst(sqlString);
 	}
+	/**
+	 * 根据用户名取得相对应的用户密码
+	 * @param username 用户名
+	 * @return String password
+	 */
 	public String getPasswordByusername(String username) {
 		String sqlString = "select password from tbl_user where username = '" + username + "'";
 		return User.dao.findFirst(sqlString).getStr("password");
@@ -45,8 +59,7 @@ public class User extends Model<User> {
 	 * 利用MD5进行加密 　　
 	 * 
 	 * @author hjp
-	 * @param String
-	 *            str 待加密的字符串
+	 * @param String str 待加密的字符串
 	 * @return 　String 加密后的字符串
 	 */
 	public  static String EncoderByMd5(String str) {

@@ -12,19 +12,7 @@ import com.jfinal.core.Controller;
 
 public class CategoryController extends Controller {
 	public void list() {
-		return;
-		/*
-		 * List<Category> lists = Category.dao.getCategories();
-		 * if(getPara("ajax")!=null && getPara("ajax").equals("ok")){ List<Map>
-		 * arr = new ArrayList<Map>(); for (Category c : lists) { Map map = new
-		 * HashMap(); map.put("id", c.get("id")); map.put("pid", c.get("pdi"));
-		 * map.put("name", c.get("name")); map.put("descr", c.get("descr"));
-		 * arr.add(map); System.out.println(map); } return; //JSONArray jsonArr
-		 * = JSONArray.fromObject(arr); //renderJson(jsonArr); }else{
-		 */
-		// render("list.html");
-		// }
-
+		 render("list.html");
 	}
 
 	public void ajax(){
@@ -34,14 +22,14 @@ public class CategoryController extends Controller {
 			for (Category c : lists) {
 					Map map = new HashMap();
 					map.put("id", c.get("id"));
-					map.put("pid", c.get("pdi"));
+					map.put("pid", c.get("pid"));
 					map.put("name", c.get("name"));
 					map.put("descr", c.get("descr"));
 					arr.add(map);
-					System.out.println(map);
 				}
 			JSONArray jsonArr = JSONArray.fromObject(arr);
-			renderJson(jsonArr);
+			System.out.println(jsonArr);
+			renderJson(arr);
 			}
 		}
 
@@ -50,11 +38,8 @@ public class CategoryController extends Controller {
 		String descr = getPara("descr");
 		if (name != null && descr != null) {
 			Category c = new Category();
-			c.set("name", name);
-			c.set("descr", descr);
-			c.set("pid", 0);
-			c.set("isleaf", 1);
-			c.set("grade", 1);
+			c.set("name", name).set("descr", descr).set("pid", 0).set("isleaf", 1).set("grade", 1);
+			
 			if (c.save()) {
 				setAttr("info", "Ìí¼Ó³É¹¦");
 			} else {

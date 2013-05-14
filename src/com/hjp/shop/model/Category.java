@@ -17,6 +17,11 @@ public class Category extends Model<Category>{
 		this.getCategories(lists, 0);
 		return lists;
 	}
+	/**
+	 * 递归拿出数据库中的目录数据
+	 * @param lists 存储的数据的list
+	 * @param pid 父ID
+	 */
 	public void getCategories(List<Category> lists,int pid){
 		List<Category> clist = find("select * from tbl_category where pid =" + pid);
 		for (Category c : clist) {

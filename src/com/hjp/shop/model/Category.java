@@ -31,4 +31,10 @@ public class Category extends Model<Category>{
 			}
 		}
 	}
-}
+	
+	public int getIdByNameAndPid(String name,int pid){
+		Category c = findFirst("select id from tbl_category where pid =" + pid + " and name='" + name + "'");
+		return c.getInt("id");
+		}
+	}
+

@@ -1,38 +1,31 @@
 <!DOCTYPE >
 <html>
-	<head>
-		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
-		 <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
-		 
-		<link rel="stylesheet" href="../css/zTreeStyle.css" type="text/css"> 
-		  <script type="text/javascript" src="../js/jquery.ztree.all-3.5.min.js"></script> 
-		  <SCRIPT LANGUAGE="JavaScript"> 
-		   var zTreeObj; 
-		   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解） 
-		   var setting = {
-				   data: {
-						simpleData: {
-							enable: true,
-							idKey:"id",
-							pIdKey:"pid"
-						}
-					}
-		   }; 
-		   // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解） 
-		   $(document).ready(function(){ 
-			   $.post("/category/ajax", {"ajax":"ok"},
-		    		  function (data, textStatus){
-		    		  // data 可以是 xmlDoc, jsonObj, html, text, 等等.
-		    		  //this; // 这个Ajax请求的选项配置信息，请参考jQuery.get()说到的this
-		    		  zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, data);
-		      }, "json");
-		   }); 
-		  </SCRIPT>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="http://files.cnblogs.com/rubylouvre/bootstrap.css" />
+<script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js">
+	
+</script>
+<link rel="stylesheet" href="../css/zTreeStyle.css" type="text/css">
+<script type="text/javascript" charset="UTF-8"
+	src="http://www.w3cplus.com/demo/css3/prefixfree.min.js"></script>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+
+body {
+	background: #f8fcd4;
+	background: radial-gradient(center, ellipse cover, #f8fcd4 19%, #dbfacb 100%);
+	background-attachment: fixed;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../js/tree.js"></script>
+
 </head>
 <body>
-	<div> 
-   		<ul id="treeDemo" class="ztree"></ul> 
-	</div> 
+	<div>
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
 </body>
 </html>

@@ -36,5 +36,12 @@ public class Category extends Model<Category>{
 		Category c = findFirst("select id from tbl_category where pid =" + pid + " and name='" + name + "'");
 		return c.getInt("id");
 		}
+	/**
+	 * 取得所有的叶子节点的category
+	 * @return list Category
+	 */
+	public List<Category> getAllLeafCategory(){
+		return find("select id,name from tbl_category where isleaf = 1");
+	}
 	}
 

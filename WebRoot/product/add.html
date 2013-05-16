@@ -4,11 +4,8 @@
 		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
 		 <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
-		 <link rel="shortcut icon" href="http://www.w3cplus.com/sites/all/themes/marvin/favicon.ico">
-		<script type="text/javascript" charset="UTF-8" src="http://www.w3cplus.com/demo/css3/prefixfree.min.js"></script>
 		<style type="text/css">
 		@import url(http://fonts.googleapis.com/css?family=Arvo);
-		
 		body {
 		  background: #f8fcd4;
 		  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
@@ -18,12 +15,25 @@
 </head>
 <body>
 	<div class="span4">
-		<h3 >添加商品根类别</h3>
+		<h3 >添加产品</h3>
 		<form action="add" class="well form-horizontal" method="post">	
-			<label ><strong>类型</strong></label>
+			<label ><strong>产品名称</strong></label>
 			<input type="text" name="name"  /><br>
-			<label ><strong>描述</strong></label>
+			<label ><strong>产品描述</strong></label>
 			<textarea  name="descr"></textarea><br/><br/>
+			<label ><strong>正常价格</strong></label>
+			<input type="text" name="nomalprice"  /><br>
+			<label ><strong>会员价格</strong></label>
+			<input type="text" name="memberprice"  /><br>
+			<label ><strong>产品类型</strong></label>
+			<#if categories ?? >
+				<select name="categoryId">
+				<#list categories as c>
+						<option value="${c.id}">${c.name}</option>
+				</#list>
+			<#else>
+				<input type="text" name="categoryId"  /><br>
+			</#if>
 			<button type="submit" class="btn btn-primary">添加</button>
 		</form>
 		<#if info ??> 

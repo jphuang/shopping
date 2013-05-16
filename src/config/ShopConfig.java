@@ -4,8 +4,10 @@ package config;
 import com.hjp.shop.controller.AdminControlller;
 import com.hjp.shop.controller.CategoryController;
 import com.hjp.shop.controller.IndexController;
+import com.hjp.shop.controller.ProductController;
 import com.hjp.shop.controller.UserController;
 import com.hjp.shop.model.Category;
+import com.hjp.shop.model.Product;
 import com.hjp.shop.model.User;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -23,6 +25,7 @@ public class ShopConfig extends JFinalConfig{
 		me.add("/admin",AdminControlller.class);
 		me.add("/",IndexController.class);
 		me.add("/category",CategoryController.class);
+		me.add("/product",ProductController.class);
 		
 	}
 
@@ -34,6 +37,7 @@ public class ShopConfig extends JFinalConfig{
 	    me.add(arp); 
 	    arp.addMapping("tbl_user", User.class); 
 	    arp.addMapping("tbl_category", Category.class); 
+	    arp.addMapping("tbl_product", Product.class); 
 		    
 	}
 

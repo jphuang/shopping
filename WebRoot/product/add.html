@@ -14,27 +14,31 @@
 		</style>
 </head>
 <body>
-	<div class="span4">
+	<div class="span4" >
 		<h3 >添加产品</h3>
 		<form action="add" class="well form-horizontal" method="post">	
 			<label ><strong>产品名称</strong></label>
-			<input type="text" name="name"  /><br>
+			<input type="text" style="height:30px" required="required" name="name"  /><br>
 			<label ><strong>产品描述</strong></label>
 			<textarea  name="descr"></textarea><br/><br/>
 			<label ><strong>正常价格</strong></label>
-			<input type="text" name="nomalprice"  /><br>
+			<input type="number"  style="height:30px" step=10 required="required" name="normalprice"  /><br>
 			<label ><strong>会员价格</strong></label>
-			<input type="text" name="memberprice"  /><br>
+			<input type="number" style="height:30px" step=10 required="required" name="memberprice"  /><br>
+			<input type="hidden"  name="add" value="ok" /><br>
 			<label ><strong>产品类型</strong></label>
 			<#if categories ?? >
 				<select name="categoryId">
-				<#list categories as c>
-						<option value="${c.id}">${c.name}</option>
-				</#list>
+					<#list categories as c>
+							<option value="${c.id}">${c.name}</option>
+					</#list>
+				</select>
+				<br/><br/>
 			<#else>
-				<input type="text" name="categoryId"  /><br>
+				<input type="text" name="categoryId"/>
 			</#if>
-			<button type="submit" class="btn btn-primary">添加</button>
+			
+			<input type="submit" class="btn btn-primary" value="添加"></input>
 		</form>
 		<#if info ??> 
 			<h2>${info}</h2>

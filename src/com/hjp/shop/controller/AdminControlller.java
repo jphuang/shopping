@@ -51,6 +51,7 @@ public class AdminControlller extends Controller {
 				setAttr("user",user);
 			}
 		}
+		render("addUser.html");
 	}
 	
 	@ClearInterceptor

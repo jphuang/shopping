@@ -1,0 +1,49 @@
+<!DOCTYPE >
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		 <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+		 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+		<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Arvo);
+		body {
+		  background: #f8fcd4;
+		  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+		  background-attachment: fixed;
+		}
+		</style>
+</head>
+<body>
+	<div class="span8" >
+		<form action="search" class="well form-horizontal" method="post">
+		<h3 >搜索产品</h3>
+		<#if categories ?? >
+			<label ><strong>产品类型</strong></label>
+				<select name="categoryId">
+					<option value="0">全部类型</option>
+					<#list categories as c>
+							<option value="${c.id}">${c.name}</option>
+					</#list>
+				</select>
+			<#else>
+				<label ><strong>产品类别id/strong></label>
+				<input type="number" name="categoryId"/>
+		</#if>	
+			<label ><strong>关键字</strong></label>
+			<input type="text" style="height:30px"  name="keyword"  /><br>
+			<label ><strong>正常价格</strong></label>
+			<strong>从</strong><input type="number"  style="height:30px"   name="minNormalprice"  />
+			<strong>到</strong><input type="number"  style="height:30px"   name="maxNormalprice"  /><br>
+			<label ><strong>会员价格</strong></label>
+			<strong>从</strong><input type="number"  style="height:30px"   name="minmemberprice"  />
+			<strong>到</strong><input type="number"  style="height:30px"   name="maxmemberprice"  /><br>
+			<label ><strong>上架时间</strong></label>
+			<strong>从</strong><input type="date"  style="height:30px"   name="minpdate"  />
+			<strong>到</strong><input type="date"  style="height:30px"   name="maxpdate"  /><br>
+			<input type="hidden"  name="search" value="ok" /><br><br>
+			<input type="submit" class="btn btn-primary" value="搜索"></input>
+		</form>
+		</div>
+		
+</body>
+</html>

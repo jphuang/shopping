@@ -1,0 +1,51 @@
+<!DOCTYPE >
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		 <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+		 <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+		<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Arvo);
+		body {
+		  background: #f8fcd4;
+		  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+		  background-attachment: fixed;
+		}
+		</style>
+</head>
+<body>
+	<div class="span4" >
+		<#if product ??>
+		<h3 >修改产品</h3>
+		<form action="/product/update" class="well form-horizontal" method="post">	
+			<label ><strong>产品名称</strong></label>
+			<input type="text" style="height:30px" required="required" name="name" value="${product.name}" /><br>
+			<label ><strong>产品描述</strong></label>
+			<textarea  name="descr">${product.descr}</textarea><br/><br/>
+			<label ><strong>正常价格</strong></label>
+			<input type="number"  style="height:30px"  required="required" name="normalprice" value="${product.normalprice}" /><br>
+			<label ><strong>会员价格</strong></label>
+			<input type="number" style="height:30px"  required="required" name="memberprice"  value="${product.memberprice}"/><br>
+			<input type="hidden"  name="update" value="ok" /><br>
+			<input type="hidden"  name="id" value="${product.id}" /><br>
+			<label ><strong>产品类型</strong></label>
+			<#if categories ?? >
+				<select name="categoryId">
+					<#list categories as c>
+							<option value="${c.id}" <#if (c.id == product.categoryid) >selected</#if> >${c.name}</option>
+					</#list>
+				</select>
+				<br/><br/>
+			<#else>
+				<input type="text" name="categoryId" style="height:30px" value="${product.categoryid}"/>
+			</#if>
+			
+			<input type="submit" class="btn btn-primary" value="修改"></input>
+		</form>
+		</#if>
+		<#if info ??> 
+			<h2>${info}</h2>
+		</#if>
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE >
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
+	    <link rel="stylesheet" href="http://files.cnblogs.com/rubylouvre/bootstrap.css"/>
+	    <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/delete.js"></script>
+		<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Arvo);
+		body {
+		  background: #f8fcd4;
+		  background: radial-gradient(center, ellipse cover,  #f8fcd4 19%,#dbfacb 100%);
+		  background-attachment: fixed;
+		}
+		</style>
+</head>
+<body>
+	<div class="container">
+		<h2>搜索结果</h2>
+		<#if products ??> 
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th width="8%">产品id</th>
+						<th width="10%">产品名字</th>
+						<th width="30%">产品描述</th>
+						<th width="10%">正常价格</th>
+						<th width="10%">会员价格</th>
+						<th width="10%">所属类别</th>
+						<th width="10%">上架日期</th>
+						<th width="5%">修改</th>
+						<th width="5%">删除</th>
+					</tr>
+					
+					<#list products as x>
+					<tr>
+						<td >${x.id}</td>
+						<td >${x.name}</td>
+						<td >${x.descr}</td>
+						<td >${x.normalprice}</td>
+						<td >${x.memberprice}</td>
+						<td >${x.categoryid}</td>
+						<td >${x.pdate !"我也不知道"}</td>
+						<td>
+							<a href="/product/update/${x.id}" onClick="return confirm('修改');">修改</a>
+						</td>
+						<td>
+							<a href="${x.id}" id="delete">删除</a>
+						</td>
+					</tr>
+					</#list>
+				</tbody>
+			</table>
+		<#else>
+			<h2>抱歉，没结果</h2>	
+		</#if>
+		
+		</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<#include "/common/head.html">
+	<div class="container">
+		<div class="span3">
+			
+		</div>
+		<div class="span9 pull-right">
+			<div class="row">
+				<#if product ??>
+				  	<div class="span3">
+				  		<img alt="${product.name}" src="/img/product.jpg"><br>
+				  	</div>
+				  	<div class="span3">
+				  		<p ><strong>产品名字: ${product.name}</strong></p>
+				  		<p >产品编号: ${product.id} 评分: 5</p>
+				  		<p >产品描述: ${product.descr}</p>
+				  		<p ><a>会员价: ${product.memberprice}元</a></p>
+				  		<p ><del>市场价: ${product.normalprice}元</del></p>
+				  		<p >赠送积分: ${product.memberprice/10}</p>
+				  		<p >上架时间: ${product.pdate}</p>
+				  	</div>
+				  	<div class="span3 pull-left">
+								<p><strong>请选择商品规格</strong></p>
+								<span title="颜色">颜色:</span>
+									<a href="javascript:;"><img src="/img/19.gif" alt="米黄色" title="米黄色"></a><br>
+									<span title="尺码">尺码:</span>
+									<a href="javascript:;"  val="44">S</a>
+									<a href="javascript:;"  val="45">M</a>
+									<a href="javascript:;"  val="46">L</a>
+									<a href="javascript:;"  val="47">XL</a><br>
+						购买数量:<br>
+						<input   value="1" max="14" min="1"  style="width: 35px" type="number">件<br>
+						<input id="addCart" class="btn  btn-primary" value="加入购物车" type="button"><br>
+						<a href="javascript:;" >收藏商品</a>
+					</div>
+				</#if>
+			</div>
+		</div>
+	</div>
+<#include "/common/tail.html">

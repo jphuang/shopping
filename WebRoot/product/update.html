@@ -32,7 +32,12 @@
 			<#if categories ?? >
 				<select name="categoryId">
 					<#list categories as c>
-							<option value="${c.id}" <#if (c.id == product.categoryid) >selected</#if> >${c.name}</option>
+							<#if (c.id == product.categoryid) >
+								<option value="${c.id}"  selected >${c.name}</option>
+							<#else>
+								<option value="${c.id}"  >${c.name}</option>
+							</#if>
+							
 					</#list>
 				</select>
 				<br/><br/>

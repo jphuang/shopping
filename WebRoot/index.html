@@ -1,13 +1,23 @@
 <#include "common/head.html">
 	<div class="container">
-		<div class="span4 pull-right">
-			<form class="well form-inline" action="/user/login" method="post" ><br/>
-				 <input type="text" class="input-large" placeholder="用户名" name="username" id="username"><br/><br/>
-				 <input type="password" class="input-large" placeholder="密码" name="password" id="password"><br/><br/>
-				  <input type="hidden"  name="login" value="ok"/>
-				 <button type="submit" class="btn btn-primary" >登陆</button>&nbsp;&nbsp;&nbsp;
-				 <input type="reset" class="btn" ></input>
-			</form>
+		<div class="span2">
+			
+		</div>
+		<div class="span10 pull-right">
+			<div class="row">
+				<#if products ??>
+					<h3 class="offset1">最新产品</h3>
+					<#list products as p>
+				  		<div class="span2">
+				  		<a href="/product/detail/${p.id}">
+				  		<img alt="${p.name}" src="/img/product.jpg"><br>
+				  		</a>
+				  		<p class="text-center"><strong>${p.name}</strong></p>
+				  		<p class="text-center"><a>会员价:${p.memberprice}元</a></p>
+				  		</div>
+				  	</#list>	
+				</#if>
+			</div>
 		</div>
 	</div>
 <#include "common/tail.html">

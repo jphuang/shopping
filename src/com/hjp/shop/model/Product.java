@@ -16,7 +16,18 @@ public class Product extends Model<Product> {
 	public  Page<Product> getAllProduct(int pageNo){
 		return this.paginate(pageNo,Product.pageSize, "select * ", " from tbl_product order by id asc");
 	}
-
+   /**
+    * 取得条件符合的产品列表
+    * @param categoryid  类别号
+    * @param keyword  关键词
+    * @param minNormalprice  最小正常价格
+    * @param maxNormalprice 最大正常价格
+    * @param minMemberprice 最小会员价格
+    * @param maxMembelprice 最大会员价格
+    * @param minpdate  最早上架时间
+    * @param maxpdate 最晚上架时间
+    * @return 产品列表
+    */
 	public List<Product> search(int categoryid,
 												String keyword,
 												int minNormalprice,
@@ -53,6 +64,11 @@ public class Product extends Model<Product> {
 		sql += " and pdate < '" + new SimpleDateFormat("yyyy-MM-dd").format(maxpdate) +"'";
 		}
 		System.out.println(sql);
+		return find(sql);
+	}
+	
+	public List<Product> getLaestProduct(int count){
+		String sql = "select * from tbl_product order by pdate desc limit 0," + count;
 		return find(sql);
 	}
 

@@ -133,4 +133,13 @@ public class ProductController extends Controller {
 			renderNull();
 		}
 	}
+	
+	public void detail(){
+		int id = 0;
+		if(getPara()!=null){
+			id = getParaToInt();
+			setAttr("product",Product.dao.findById(id));
+		}
+		render("detail.html");
+	}
 }

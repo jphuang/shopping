@@ -23,4 +23,24 @@ public class Cart {
 		}
 		items.add(item);
 	}
+
+	public void updateCount(int productId, int count) {
+		for (CartItem i : items) {
+			if(i.getProductId()==productId){
+				i.setCount(count);
+			}
+		}
+	}
+
+	public void deleteItem(int productId) {
+		CartItem item=null;
+		for (CartItem i : items) {
+			if(i.getProductId()==productId){
+				item = i;
+			}
+		}
+		if(item!=null){
+			items.remove(item);
+		}
+	}
 }

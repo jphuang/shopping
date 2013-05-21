@@ -31,13 +31,13 @@ create table tbl_product
 	normalprice double,
 	memberprice double,
 	pdate datetime,
-	categoryid int references category(id)
+	categoryid int references tbl_category(id)
 );
 
 create table tbl_salesorder
 (
 	id int primary key auto_increment,
-	userid int,
+	userid int references tbl_user(id),
 	addr varchar(255),
 	odate datetime,
 	status int
@@ -46,8 +46,8 @@ create table tbl_salesorder
 create table tbl_salesitem
 (
 	id int primary key auto_increment,
-	productid int,
+	productid int references tbl_product(id),
 	unitprice double,
 	pcount int,
-	orderid int
+	orderid int references tbl_salesorder(id)
 );

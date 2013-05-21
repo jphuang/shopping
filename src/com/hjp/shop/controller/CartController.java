@@ -32,4 +32,35 @@ public class CartController extends Controller {
 		setAttr("items", cart.getItems());
 		render("cart.html");
 	}
+	
+	public void update(){
+		int productId = 0;
+		int count = 0  ;
+		if(getPara("productId")!=null){
+			productId = getParaToInt("productId");
+		}
+		if(getPara("count")!=null){
+			count = getParaToInt("count");
+		}
+		if(productId !=0 && count !=0){
+			Cart cart = (Cart)getSessionAttr("cart");
+			cart.updateCount(productId,count);
+			renderText("ok");
+			return;
+		}
+		renderNull();
+	}
+	public void deleteItem(){
+		int productId = 0;
+		if(getPara("productId")!=null){
+			productId = getParaToInt("productId");
+		}
+		if(productId !=0 ){
+			Cart cart = (Cart)getSessionAttr("cart");
+			cart.deleteItem(productId);
+			renderText("ok");
+			return;
+		}
+		renderNull();
+	}
 }

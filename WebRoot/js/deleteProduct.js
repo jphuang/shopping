@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#delete").live("click",function(){
 		var id = $(this).attr("href");
-		if(confirm("确认删除 类别吗？")){
+		if(confirm("确认删除吗？")){
 			$.post("/product/delete", {
 				"id" : id
 			}, function(data, textStatus) {

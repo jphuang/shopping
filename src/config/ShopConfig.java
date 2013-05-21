@@ -2,6 +2,7 @@
 package config;
 
 import com.hjp.shop.controller.AdminControlller;
+import com.hjp.shop.controller.CartController;
 import com.hjp.shop.controller.CategoryController;
 import com.hjp.shop.controller.IndexController;
 import com.hjp.shop.controller.ProductController;
@@ -26,6 +27,7 @@ public class ShopConfig extends JFinalConfig{
 		me.add("/",IndexController.class);
 		me.add("/category",CategoryController.class);
 		me.add("/product",ProductController.class);
+		me.add("/cart",CartController.class);
 		
 	}
 

@@ -1,0 +1,28 @@
+<#include "/common/head.html">
+	<div class="container">
+		<div class="span3" width="25%">
+		</div>
+		<div class="span9 ">
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th width="20%">产品id</th>
+						<th width="20%">产品名字</th>
+						<th width="20%">产品价格</th>
+						<th width="20%">购买数量</th>
+					</tr>
+					<#if items ?? >
+						<#list items as x>
+					<tr>
+						<td >${x.productId}</td>
+						<td >${x.productName}</td>
+						<td >${x.price}</td>
+						<td >${x.count}</td>
+					</tr>
+						</#list>
+					</#if> 
+				</tbody>
+			</table>
+		</div>
+	</div>
+<#include "/common/tail.html">

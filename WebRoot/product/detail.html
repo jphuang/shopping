@@ -23,13 +23,17 @@
 								<span title="颜色">颜色:</span>
 									<a href="javascript:;"><img src="/img/19.gif" alt="米黄色" title="米黄色"></a><br>
 									<span title="尺码">尺码:</span>
-									<a href="javascript:;"  val="44">S</a>
-									<a href="javascript:;"  val="45">M</a>
-									<a href="javascript:;"  val="46">L</a>
-									<a href="javascript:;"  val="47">XL</a><br>
+									<a >S</a>
+									<a >M</a>
+									<a >L</a>
+									<a >XL</a><br>
 						购买数量:<br>
-						<input   value="1" max="14" min="1"  style="width: 35px" type="number">件<br>
-						<input id="addCart" class="btn  btn-primary" value="加入购物车" type="button"><br>
+						<form action="/cart" method="post">
+						<input  value="1" max="14" min="1"  style="width: 35px" type="number" name="count">件<br>
+						<input  value="${product.id}" name="productid"   type="hidden"/>
+						<input type="submit" class="btn  btn-primary" value="加入购物车" /><br>
+						</form>
+						
 						<a href="javascript:;" >收藏商品</a>
 					</div>
 				</#if>

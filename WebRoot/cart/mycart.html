@@ -1,0 +1,25 @@
+<table class="table table-bordered table-striped">
+	<tbody>
+		<tr>
+			<th width="10%">产品id</th>
+			<th width="20%">产品名字</th>
+			<th width="20%">产品价格</th>
+			<th width="20%">购买数量</th>
+			<th width="20%">修改</th>
+			<th width="10%">删除</th>
+		</tr>
+		<#if items ?? >
+			<#list items as x>
+		<tr>
+			<td id="p${x.productId}">${x.productId}</td>
+			<td >${x.product.name}</td>
+			<td >${x.price}</td>
+			<td >${x.count}</td>
+			<td ><button class="btn" id="cartUpdate">修改数量</button></td>
+			<td ><a href="#" id="cartdelete">删除</a></td>
+		</tr>
+			</#list>
+		</#if> 
+	</tbody>
+</table>
+<a class="btn btn-primary offset7" href="order?buy=ok">下订单</a>

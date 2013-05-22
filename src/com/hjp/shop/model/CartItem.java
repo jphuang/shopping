@@ -2,7 +2,7 @@ package com.hjp.shop.model;
 
 public class CartItem {
 	private int productId;
-	private String productName;
+	private Product product;
 	private double  price;
 	private int count;
 
@@ -14,12 +14,8 @@ public class CartItem {
 		this.productId = productId;
 	}
 
-	public String getProductName() {
-		return Product.dao.findById(getProductId()).getStr("name");
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public Product getProduct() {
+		return Product.dao.findById(getProductId());
 	}
 
 	public double getPrice() {

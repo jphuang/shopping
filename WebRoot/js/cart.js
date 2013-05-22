@@ -1,4 +1,6 @@
+// 页面加载完成后执行下面
 $(document).ready(function() {
+	//为每一个具有相同id=cartUpdate 的 添加click事件
 	$("#cartUpdate").live("click",function(){
 		var text=$(this).text();
 		if(text=="修改数量"){
@@ -18,8 +20,6 @@ $(document).ready(function() {
 					alert("修改失败");
 				}
 			});
-			
-			
 		}
 	});
 	

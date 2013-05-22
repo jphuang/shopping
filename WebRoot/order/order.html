@@ -1,0 +1,53 @@
+<#include "/common/head.html">
+	
+	<div class="container">
+		<div class="span2" >
+			<ul class="nav nav-pills nav-stacked">
+					<li><a href="userinfo/info" target="info">用户信息</a></li>
+					<li><a href="userinfo/update" target="info">修改资料</a></li>
+					<li><a href="userinfo/updatePassword" target="info">修改密码</a></li>
+					<li><a href="">我的订单</a></li>
+					<li><a href="">我的购物车</a></li>
+			</ul>
+		</div>
+		<div class="span9">
+			<h3>订单确认</h3> 
+			<#if items ?? >
+			<#assign prices=0 />
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th width="10%">产品id</th>
+						<th width="20%">产品名字</th>
+						<th width="20%">产品价格</th>
+						<th width="20%">购买数量</th>
+					</tr>
+					<#list items as x>
+					<tr>
+						<td >${x.productId}</td>
+						<td >${x.product.name}</td>
+						<td >${x.price}</td>
+						<td >${x.count}</td>
+					</tr>
+					<#assign prices =prices + x.price * x.count />
+					</#list>
+				</tbody>
+			</table>
+			<label class="btn btn-success offset6">总共￥:${prices} 元</label>
+			<h3>收货地址</h3>
+			<#if user ?? >
+				<form action="order/add" class="well form-horizontal" method="post">	
+				<label>收货人:</label>
+				<input type="text" name="username" class="text" value="${user.username}"/><br>
+				<label>电话:</label>
+				<input type="text" name="phone" class="text" value="${user.phone}"/><br>
+				<input type="hidden" name="prices"  value="${prices}"/>
+				<label>收货地址:</label>
+				<textarea  name="addr">${user.addr}</textarea><br><br>
+				<button class="btn btn-primary" type="submit">确认订单</button>
+			</form> 
+			</#if> 
+			</#if> 
+		</div>
+	</div>
+<#include "/common/tail.html">

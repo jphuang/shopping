@@ -1,19 +1,18 @@
-<#include "../common/head.html">
+<#include "/common/head.html">
 		<div class="row offset1">
-			<div class="span3">
-			<h2>用户自服务</h2>
+			<div class="span2">
+				<h3>用户自服务</h3>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="userinfo/info" target="info">用户信息</a></li>
 					<li><a href="userinfo/update" target="info">修改资料</a></li>
 					<li><a href="userinfo/updatePassword" target="info">修改密码</a></li>
-					<li><a href="">我的订单</a></li>
-					<li><a href="">我的购物车</a></li>
+					<li><a href="/order" >我的订单</a></li>
+					<li><a href="/cart/myCart" target="info">我的购物车</a></li>
 				</ul>
 			</div>
-			<iframe width="690px" name="info" height="400px" frameborder=”no”>
+			<iframe   name="info" style="float:left" width="600px" height="450px" frameborder="no">
 				<div class="container">
 				</div>
 			</iframe>
 		</div>
-	</body>
-</html>
+<#include "/common/tail.html">

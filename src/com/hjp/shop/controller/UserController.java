@@ -56,21 +56,25 @@ public class UserController extends Controller {
 
 	@ClearInterceptor
 	public void login() {
-		if (getPara("login") == null || !getPara("login").equals("ok")) {
-			render("/index.html");
-		} else {
+		if (getPara("login") != null && getPara("login").equals("ok")) {
 			String usernameString = getPara("username");
 			String passwordString = getPara("password");
-
 			passwordString = User.EncoderByMd5(passwordString);
-
-			if (passwordString.equals(User.dao
-					.getPasswordByusername(usernameString))) {
-				this.setSessionAttr("user",
-						User.dao.getUserByName(usernameString));
-				redirect("/user/selfServer");
+			if (passwordString.equals(User.dao.getPasswordByusername(usernameString))) {
+				this.setSessionAttr("user",User.dao.getUserByName(usernameString));
+				String path = (String)getSessionAttr("path");
+				if(path!=null){
+					redirect(path);
+				}{
+					redirect("/");
+				}
+				return;
+			} else{
+				String path = getRequest().getServletPath();
+				setSessionAttr("path", path);
 			}
 		}
+		render("index.html");
 	}
 
 	public void userinfo() {
@@ -101,18 +105,19 @@ public class UserController extends Controller {
 			}
 		}
 	}
+
 	public void updatePassword() {
 		User user = (User) getSessionAttr("user");
 		String password = getPara("password");
 		String password1 = getPara("password1");
 		String password2 = getPara("password2");
-		
-		if(password==null || !User.EncoderByMd5(password).equals(user.get("password"))){
+
+		if (password == null || !User.EncoderByMd5(password).equals(user.get("password"))) {
 			renderHtml("<span class='red'>旧密码不正确<span>");
 			return;
 		}
 		if (password1 != null && password1.equals(password2)) {
-			user.set("password",User.EncoderByMd5(password1));
+			user.set("password", User.EncoderByMd5(password1));
 			if (user.update()) {
 				renderHtml("<span class='green'>密码修改成功<span>");
 			} else {
@@ -121,5 +126,9 @@ public class UserController extends Controller {
 		} else {
 			renderHtml("<span class='red'>两个密码不一样<span>");
 		}
+	}
+	public void logout(){
+		setSessionAttr("user", null);
+		redirect("/");
 	}
 }

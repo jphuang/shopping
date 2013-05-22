@@ -16,18 +16,18 @@
 			</form>
 		</div>
 		
-		<#if user ??>
+		<#if newuser ??>
 			<div class="container">
 				<label><strong>请记住下面的用户名和密码</strong></label><br/>
 				<table class="table table-bordered table-striped">
 				<tbody>
 					<tr>
 						<th width="15%">用户名</th>
-						<td >${user.username}</td>
+						<td >${newuser.username}</td>
 					</tr>
 					<tr>
 						<th width="15%">密  码</th>
-						<td >${user.password}</td>
+						<td >${newuser.password}</td>
 					</tr>
 				</tbody>
 			</table>

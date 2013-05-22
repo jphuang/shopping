@@ -48,7 +48,7 @@ public class AdminControlller extends Controller {
 			User user = new User().set("username", username).set("password", User.EncoderByMd5(password)).set("rdate",new Date()).set("phone", "10086").set("addr", "ÇëĞŞ¸ÄÄãµÄµØÖ·");
 			if(user.save()){
 				user.set("password", password);
-				setAttr("user",user);
+				setAttr("newuser",user);
 			}
 		}
 		render("addUser.html");

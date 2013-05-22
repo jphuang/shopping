@@ -24,12 +24,14 @@ public class CartController extends Controller {
 		CartItem item = new CartItem();
 		if(productid!=0){
 			item.setProductId(productid);
-			item.setProductName(item.getProductName());
 			item.setPrice(Product.dao.findById(productid).getDouble("normalprice"));
 			item.setCount(count);
 			cart.add(item);
 		}
-		setAttr("items", cart.getItems());
+		if(cart.getItems().size() !=0)
+		{
+			setAttr("items", cart.getItems());
+		}
 		render("cart.html");
 	}
 	
@@ -62,5 +64,10 @@ public class CartController extends Controller {
 			return;
 		}
 		renderNull();
+	}
+	public void myCart(){
+		Cart cart = (Cart)getSessionAttr("cart");
+		setAttr("items", cart.getItems());
+		render("mycart.html");
 	}
 }

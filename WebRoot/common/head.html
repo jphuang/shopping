@@ -12,18 +12,22 @@
 			<div class="row">
 				<img alt="正品保障" src="/img/header.jpg" class="offset3">
 				<ul class="nav pull-right">
-					<li id="headerLogin"><a href="/login.jhtml">登录</a></li>
-					<li id="headerRegiter"><a href="/register.jhtml">注册</a></li>
-					<li id="headerUsername"><a href="#">登陆</a></li>
-					<li id="headerLogout"><a href="/logout.html">[退出]</a></li>
-					<li><a href="/admin/" target="_blank">管理后台</a></li>
-					<li><a href="/member/index.jhtml">会员中心</a></li>
-					<li><a href="/article/list/7.jhtml">关于我们</a></li>
+					<#if user ??>
+						<li ><a href="/user/selfServer">你好！${user.username}</a></li>
+						<li ><a href="/user/logout">[退出]</a></li>
+						<#if (user.username=="admin")>
+							<li><a href="/admin" >管理后台</a></li>
+						</#if>
+					<#else>
+						<li ><a href="/user/login">登录</a></li>
+						<li ><a href="/user/register">注册</a></li>
+					</#if>
+					<li><a href="/article/list/7.html">关于我们</a></li>
 				</ul>
 				
 				</div>
 				<div class="pull-right">
-					<a href="/cart/list.jhtml">购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/cart">购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					客服热线: <strong>400-8888888</strong>
 				</div>
 		</div>

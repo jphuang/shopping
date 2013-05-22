@@ -8,7 +8,6 @@ public class UserInterceptor implements Interceptor {
 
 	public void intercept(ActionInvocation ai) {
 		User user = (User) ai.getController().getSessionAttr("user");
-
 		if (user != null) {
 			if (User.dao.verify(user.getStr("username")).equals("no")) {
 				ai.invoke();

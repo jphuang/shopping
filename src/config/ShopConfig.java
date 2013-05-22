@@ -1,14 +1,18 @@
 
 package config;
 
+import com.hjp.shop.Interceptor.LoginInterceptor;
 import com.hjp.shop.controller.AdminControlller;
 import com.hjp.shop.controller.CartController;
 import com.hjp.shop.controller.CategoryController;
 import com.hjp.shop.controller.IndexController;
+import com.hjp.shop.controller.OrderControlller;
 import com.hjp.shop.controller.ProductController;
 import com.hjp.shop.controller.UserController;
 import com.hjp.shop.model.Category;
 import com.hjp.shop.model.Product;
+import com.hjp.shop.model.Salesitem;
+import com.hjp.shop.model.Salesorder;
 import com.hjp.shop.model.User;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -28,6 +32,7 @@ public class ShopConfig extends JFinalConfig{
 		me.add("/category",CategoryController.class);
 		me.add("/product",ProductController.class);
 		me.add("/cart",CartController.class);
+		me.add("/order",OrderControlller.class);
 		
 	}
 
@@ -40,12 +45,14 @@ public class ShopConfig extends JFinalConfig{
 	    arp.addMapping("tbl_user", User.class); 
 	    arp.addMapping("tbl_category", Category.class); 
 	    arp.addMapping("tbl_product", Product.class); 
+	    arp.addMapping("tbl_salesitem", Salesitem.class); 
+	    arp.addMapping("tbl_salesorder", Salesorder.class); 
 		    
 	}
 
 	@Override
 	public void configInterceptor(Interceptors me) {
-		
+		me.add(new LoginInterceptor());
 	}
 
 	@Override

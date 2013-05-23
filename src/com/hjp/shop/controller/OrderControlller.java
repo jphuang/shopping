@@ -33,7 +33,7 @@ public class OrderControlller extends Controller {
 			Salesorder order = new Salesorder();
 			order.set("userid", id).set("addr", addr).set("odate",new Date()).set("status",0);
 			boolean ook = order.save();
-			int oid = Salesorder.dao.findFirst("select id from tbl_salesorder order by id desc limit 1").getInt("id");
+			int oid = Salesorder.dao.getLastId();
 			Cart cart = (Cart)getSessionAttr("cart");
 			List<CartItem> items = cart.getItems();
 			boolean iok =true;
@@ -52,5 +52,18 @@ public class OrderControlller extends Controller {
 				setAttr("info", "ÏÂ¶©µ¥Ê§°Ü£¡");
 			}
 		}
+		render("addOk.html");
+	}
+	
+	public void myOrder(){
+		int uid = 0;
+		if(getPara() !=null){
+			uid = getParaToInt();
+		}
+		if(uid > 0){
+			List<Salesorder> orderlists = Salesorder.dao.getOrdersByUid(uid);
+			setAttr("orderlists", orderlists);
+		}
+		render("myOrder.html");
 	}
 }

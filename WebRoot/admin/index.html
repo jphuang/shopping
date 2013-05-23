@@ -7,10 +7,10 @@
         <script src="http://files.cnblogs.com/rubylouvre/jquery1.83.js" > </script>
         <script src="http://files.cnblogs.com/rubylouvre/bootstrap-transition.js"></script>
         <script src="http://files.cnblogs.com/rubylouvre/bootstrap-collapse.js"></script>
-        <#include "../css/css.html"/>
+        <#include "/css/css.html"/>
     </head>
 	<body>
-		<br/><br/><br/><br/>
+		<br/><label class="button rounded black">著名的网上商城管理后台 </label><br/>
 		<div class="span2 ">
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo1">会员管理</button>
@@ -26,30 +26,29 @@
 				<li><a href="/product/add" target="main">产品添加</a></li>
 				<li><a href="/product/search" target="main">产品搜索</a></li>
 			</ul>
+			
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo3">订单管理</button>
+			<ul id="demo3" class="collapse nav nav-pills nav-stacked">
+				<li><a href="/order/list" target="main">订单列表</a></li>
+				<li><a href="/order/search" target="main">订单搜索</a></li>
+			</ul>
 			
-			<div id="demo3" class="collapse">
-				<div>订单浏览</div>
-				<div>订单处理</div>
-			</div>
 			<button class="btn btn-primary" data-toggle="collapse"
 				data-target="#demo4">类别管理</button>
-			
 			<ul id="demo4" class="collapse nav nav-pills nav-stacked">
 				<li><a href="/category/list" target="main">类别管理</a></li>
 				<li><a href="/category/add"  target="main">类别添加</a></li>
 			</ul>
+			
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo5">系统管理</button>
-			
 			<div id="demo5" class="collapse">
 				<div>日志管理</div>
 				<div>杂项管理</div>
 				<div>退出管理</div>
 			</div>
 		</div>
-		<iframe name="main" width="1000px"  height="600px" style="float:left">
+		<iframe name="main" width="1000px"  height="500px" style="float:left" frameborder="no">
 		</iframe>
-	</body>
-</html>
+	<#include "/common/tail.html">

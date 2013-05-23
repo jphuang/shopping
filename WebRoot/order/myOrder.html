@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    </head>
+<body>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<th width="10%">订单编号</th>
+				<th width="50%">收货地址</th>
+				<th width="20%">订单日期</th>
+				<th width="15%">订单状态</th>
+			</tr>
+			<#list orderlists as o>
+			<tr>
+				<td >${o.id}</td>
+				<td >${o.addr}</td>
+				<td >${o.odate}</td>
+				<td >${o.status}</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+</body>
+</html>

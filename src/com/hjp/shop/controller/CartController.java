@@ -67,6 +67,7 @@ public class CartController extends Controller {
 	}
 	public void myCart(){
 		Cart cart = (Cart)getSessionAttr("cart");
+		if(cart!=null)
 		setAttr("items", cart.getItems());
 		render("mycart.html");
 	}

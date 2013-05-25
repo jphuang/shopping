@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.hjp.shop.model.Cart;
 import com.hjp.shop.model.CartItem;
+import com.hjp.shop.model.Product;
 import com.hjp.shop.model.Salesitem;
 import com.hjp.shop.model.Salesorder;
 import com.hjp.shop.model.User;
@@ -101,5 +102,25 @@ public class OrderControlller extends Controller {
 			setAttr("order", Salesorder.dao.findById(orderid));
 		}
 		render("search.html");
+	}
+	
+	public void update(){
+		int orderid = 0;
+		int status = -1;
+		if(getPara("orderid")!=null){
+			orderid = getParaToInt("orderid");
+		}
+		if(getPara("status")!=null){
+			status = getParaToInt("status");
+		}
+		if(orderid >0 && status >-1){
+			Salesorder s = Salesorder.dao.findById(orderid);
+			s.set("status",status);
+			if(s.update()){
+				renderText("ok");
+				return;
+			}
+		}
+		renderNull();
 	}
 }

@@ -32,7 +32,7 @@ $(document).ready(function() {
 			var text = optObj.find("option:selected").text();
 			var val =  optObj.find("option:selected").val();
 			var id = optObj.prev().prev().prev().text();
-			$.post("/order/update",{"status":val,"productid":id},function(data){
+			$.post("/order/update",{"status":val,"orderid":id},function(data){
 				if(data=="ok"){
 					optObj.html(text);
 					if(text=="未处理"){

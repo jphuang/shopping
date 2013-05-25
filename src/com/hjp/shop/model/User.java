@@ -88,4 +88,9 @@ public class User extends Model<User> {
 
 		return md5StrBuff.toString();
 	}
+
+	public long getPageCount() {
+		long count = findFirst("select count(*) count from tbl_user").getLong("count");
+		return (count + User.pageSize -1)/User.pageSize;
+	}
 }

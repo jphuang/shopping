@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/order.js"></script>
+    </head>
+<body>
+<div class="container">
+	<h3 class="offset1">订单列表</h3>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<th width="10%">订单编号</th>
+				<th width="50%">收货地址</th>
+				<th width="15%">订单日期</th>
+				<th width="10%">订单状态</th>
+				<th width="15%">操作</th>
+			</tr>
+			<#list oLists as o>
+			<tr>
+				<td >${o.id}</td>
+				<td >${o.addr}</td>
+				<td >${o.odate}</td>
+				
+				<#if (o.status = 0)>
+					<#assign status='未处理' />
+					<#assign cla='btn-primary' />
+				</#if>
+				<#if (o.status = 1)>
+					<#assign status='已经处理' />
+					<#assign cla='btn-success' />
+				</#if>
+				<#if (o.status = 2)>
+					<#assign status='废单' />
+					<#assign cla='btn-danger' />
+				</#if>
+				<td >${status}</td>
+				<td ><button id="opt" class="btn ${cla}">订单处理</button></td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+			<ul class="pager">
+			    <li><a href="/order/list/${pageNo-1}">前一页</a></li>
+			    <li>第${pageNo}页</li>
+			    <li>共${pageCount}页</li>
+			    <li><a href="/order/list/${pageNo+1}">后一页</a></li>
+		    </ul>
+</div>
+</body>
+</html>

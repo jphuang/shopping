@@ -64,16 +64,17 @@ public class UserController extends Controller {
 				this.setSessionAttr("user",User.dao.getUserByName(usernameString));
 				String path = (String)getSessionAttr("path");
 				if(path!=null){
+					
 					redirect(path);
+					return;
 				}{
 					redirect("/");
 				}
 				return;
-			} else{
-				String path = getRequest().getServletPath();
-				setSessionAttr("path", path);
-			}
+			} 
 		}
+		String path = getRequest().getHeader("referer");
+		setSessionAttr("path", path);
 		render("index.html");
 	}
 

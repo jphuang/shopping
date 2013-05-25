@@ -12,6 +12,12 @@
 	<body>
 		<br/><label class="button rounded black">著名的网上商城管理后台 </label><br/>
 		<div class="span2 ">
+			<button class="btn btn-primary" data-toggle="collapse"
+				data-target="#demo0">系统引导</button>
+			<ul id="demo0" class="collapse nav nav-pills nav-stacked">
+				<li><a href="/">首页</a></li>
+				<li><a href="/user/logout">退出</a></li>
+			</ul>
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo1">会员管理</button>
 			<ul id="demo1" class="collapse nav nav-pills nav-stacked">
@@ -19,6 +25,7 @@
 				<li><a href="/admin/addUser" target="main">添加用户</a></li>
 				<li><a href="/admin/searchUser" target="main">查找用户</a></li>
 			</ul>
+			
 			<button class="btn btn-primary" data-toggle="collapse"
 				data-target="#demo2">产品管理</button>   
 			<ul id="demo2" class="collapse nav nav-pills nav-stacked">
@@ -43,12 +50,12 @@
 			
 			<button class="btn btn-danger" data-toggle="collapse"
 				data-target="#demo5">系统管理</button>
-			<div id="demo5" class="collapse">
-				<div>日志管理</div>
-				<div>杂项管理</div>
-				<div>退出管理</div>
-			</div>
+				<ul id="demo5" class="collapse nav nav-pills nav-stacked">
+					<li><a href="/log" target="main">系统日志</a></li>
+					<li><a href="#"  target="main">杂项管理</a></li>
+				</ul>
 		</div>
-		<iframe name="main" width="1000px"  height="500px" style="float:left" frameborder="no">
+		<iframe name="main" width="1000px"  height="700px" style="float:left" frameborder="no">
+			<h1>你好，管理员。</h1>
 		</iframe>
 	<#include "/common/tail.html">

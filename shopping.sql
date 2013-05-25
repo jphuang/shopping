@@ -51,3 +51,12 @@ create table tbl_salesitem
 	pcount int,
 	orderid int references tbl_salesorder(id)
 );
+
+create table tbl_log
+(
+	id int primary key auto_increment,
+	username varchar(25),
+	controller varchar(25),
+	act varchar(25),
+	logdate datetime
+);

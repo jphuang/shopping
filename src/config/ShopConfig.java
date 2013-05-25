@@ -47,7 +47,6 @@ public class ShopConfig extends JFinalConfig{
 	    arp.addMapping("tbl_product", Product.class); 
 	    arp.addMapping("tbl_salesitem", Salesitem.class); 
 	    arp.addMapping("tbl_salesorder", Salesorder.class); 
-		    
 	}
 
 	@Override

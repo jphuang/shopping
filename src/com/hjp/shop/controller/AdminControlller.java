@@ -36,8 +36,13 @@ public class AdminControlller extends Controller {
 		}else {
 			pageNo = 1;
 		}
+		long pageCount = User.dao.getPageCount();
+		if(pageNo > pageCount){
+			pageNo =(int)pageCount;
+		}
 		this.setAttr("userPage", User.dao.getAlldate(pageNo));
 		setAttr("pageNo",pageNo);
+		setAttr("pageCount",pageCount);
 		render("listUser.html");
 	}
 	

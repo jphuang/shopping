@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+    </head>
+<body>
+<div class="container">
+	<h3 class="offset1">系统日志</h3>
+			<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<th width="10%">id</th>
+				<th width="15%">用户</th>
+				<th width="15%">控制器</th>
+				<th width="25%">action</th>
+				<th width="15%">时间</th>
+			</tr>
+			<#list logList as log>
+			<tr>
+				<td >${log.id}</td>
+				<td >${log.username}</td>
+				<td >${log.controller}</td>
+				<td >${log.act}</td>
+				<td >${log.logdate}</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+			<ul class="pager">
+			    <li><a href="/log/${pageNo-1}">前一页</a></li>
+			    <li>第${pageNo}页</li>
+			    <li>共${pageCount}页</li>
+			    <li><a href="/log/${pageNo+1}">后一页</a></li>
+		    </ul>
+</div>
+</body>
+</html>

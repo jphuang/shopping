@@ -66,4 +66,40 @@ public class OrderControlller extends Controller {
 		}
 		render("myOrder.html");
 	}
+	public void list(){
+		int pageNo;
+		if (getPara()!=null) {
+			try {
+				pageNo = getParaToInt();
+				if (pageNo <1 ) {
+					pageNo = 1;
+				}
+			} catch (Exception e) {
+				pageNo = 1;
+				e.printStackTrace();
+			}
+		}else {
+			pageNo = 1;
+		}
+		long pageCount =  Salesorder.dao.getCountPage();
+		if( pageNo>pageCount){
+			pageNo= (int)pageCount;
+		}
+		List<Salesorder> oLists= Salesorder.dao.getAllOrder(pageNo);
+		setAttr("pageNo", pageNo);
+		setAttr("oLists",oLists);
+		setAttr("pageCount",pageCount);
+		render("list.html");
+	}
+	
+	public void search(){
+		int orderid = 0;
+		if(getPara("orderid")!=null){
+			orderid = getParaToInt("orderid");
+		}
+		if(orderid >0){
+			setAttr("order", Salesorder.dao.findById(orderid));
+		}
+		render("search.html");
+	}
 }

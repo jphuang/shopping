@@ -3,14 +3,19 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet"	href="/css/bootstrap.min.css" />
-	<link rel="stylesheet"	href="/css/bofy.css" />
 	<script  src="/js/jquery.js"></script>
+	<style type="text/css">
+		body{
+			background-color:#EEDDEE;
+		}
+		
+	</style>
 	</head>
 <body>
 	<div class="container">
 		<div class="navbar">
 			<div class="row">
-				<img alt="正品保障" src="/img/header.jpg" class="offset3">
+				 <img alt="正品保障" src="/img/header.jpg" class="offset3 navbar-inverse">
 				<ul class="nav pull-right">
 					<#if user ??>
 						<li ><a href="/user/selfServer">你好！${user.username}</a></li>
@@ -24,16 +29,15 @@
 					</#if>
 					<li><a href="/article/list/7.html">关于我们</a></li>
 				</ul>
-				
 				</div>
 				<div class="pull-right">
-					<a href="/cart">购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					客服热线: <strong>400-8888888</strong>
+					 <img alt="购物车" src="/img/cart.jpg">&nbsp;&nbsp;<a href="/cart"><strong>购物车</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					客服热线: <strong>400-8888888</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
 		</div>
 
-		<div class="navbar">
-			<div class="navbar-inner">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner ">
 				<div class="container">
 					<a class="brand" href="#"> SHOP商城 </a>
 					<ul class="nav">
@@ -53,27 +57,28 @@
 		<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
-				<div class="span2">
+				<div class="span3">
 					<ul class="nav">
 						<li ><a href="#">热销</a></li>
+						<li ><img src="/img/hot.gif"></li>
 						<li><a href="#">最新</a></li>
+						<li ><img src="/img/new.gif"></li>
 					</ul>
 				</div>
-				<div class="span6">
-					热门搜索: 
-					<a href="">T恤</a> 
-					<a href="">衬衫</a>
-					<a href="">西服</a> 
-					<a href="">西裤</a> 
-					<a href="">森马</a> 
-					<a href="">七匹狼</a> 
-					<a href="">梵希蔓</a>
-					<a href="">春夏新款</a> 
-					<a href="">牛仔裤</a>
+				<div class="span5">
+					<ul class="nav">
+					<li><a>热门搜索:</a></li> 
+					<li><a href="">T恤</a></li>  
+					<li><a href="">衬衫</a></li> 
+					<li><a href="">西服</a></li> 
+					<li><a href="">西裤</a></li> 
+					<li><a href="">森马</a></li>  
+					<li><a href="">七匹狼</a></li>  
+					</ul>
 			    </div>
 				<div class="span3">
 					<form id="productSearchForm" action="#" method="get">
-						<input class="search-query span2" placeholder="搜索" type="text">
+						<input class="search-query span2"  Splaceholder="搜索" type="text">
 						<button type="submit" class="btn">搜索</button>
 					</form>
 				</div>

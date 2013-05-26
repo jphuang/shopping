@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="/js/jquery.js"></script>
         <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/jquery.js"></script>
     </head>
 <body>
 	<table class="table table-bordered table-striped">
@@ -19,7 +19,19 @@
 				<td >${o.id}</td>
 				<td >${o.addr}</td>
 				<td >${o.odate}</td>
-				<td >${o.status}</td>
+				<#if (o.status = 0)>
+					<#assign status='未处理' />
+					<#assign cla='btn-primary' />
+				</#if>
+				<#if (o.status = 1)>
+					<#assign status='已经处理' />
+					<#assign cla='btn-success' />
+				</#if>
+				<#if (o.status = 2)>
+					<#assign status='废单' />
+					<#assign cla='btn-danger' />
+				</#if>
+				<td class="${cla}">${status}</td>
 			</tr>
 			</#list>
 		</tbody>

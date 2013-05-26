@@ -7,7 +7,7 @@
 			<div class="row">
 				<#if product ??>
 				  	<div class="span3">
-				  		<img alt="${product.name}" src="/img/product.jpg"><br>
+				  		<img alt="${product.name}" src="/img/product/${product.id}.jpg"><br>
 				  	</div>
 				  	<div class="span3">
 				  		<p ><strong>产品名字: ${product.name}</strong></p>
@@ -22,11 +22,6 @@
 								<p><strong>请选择商品规格</strong></p>
 								<span title="颜色">颜色:</span>
 									<a href="javascript:;"><img src="/img/19.gif" alt="米黄色" title="米黄色"></a><br>
-									<span title="尺码">尺码:</span>
-									<a >S</a>
-									<a >M</a>
-									<a >L</a>
-									<a >XL</a><br>
 						购买数量:<br>
 						<form action="/cart" method="post">
 						<input  value="1" max="14" min="1"  style="width: 35px" type="number" name="count">件<br>

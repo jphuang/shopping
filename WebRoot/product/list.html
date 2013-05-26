@@ -15,13 +15,14 @@
 			<tr>
 				<th width="8%">产品id</th>
 				<th width="10%">产品名字</th>
-				<th width="30%">产品描述</th>
+				<th width="25%">产品描述</th>
 				<th width="10%">正常价格</th>
 				<th width="10%">会员价格</th>
 				<th width="10%">所属类别</th>
 				<th width="10%">上架日期</th>
 				<th width="5%">修改</th>
 				<th width="5%">删除</th>
+				<th width="5%">上传图片</th>
 			</tr>
 			
 			<#list products as x>
@@ -39,6 +40,7 @@
 				<td>
 					<a href="${x.id}" id="delete">删除</a>
 				</td>
+				<td ><a href="/product/uploadfile/${x.id}">上传</a></td>
 			</tr>
 			</#list>
 		</tbody>

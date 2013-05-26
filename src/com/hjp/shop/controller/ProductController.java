@@ -1,5 +1,6 @@
 package com.hjp.shop.controller;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,6 +10,8 @@ import java.util.Locale;
 import com.hjp.shop.model.Category;
 import com.hjp.shop.model.Product;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.PathKit;
+import com.jfinal.upload.UploadFile;
 
 public class ProductController extends Controller {
 	public void add() {
@@ -141,5 +144,31 @@ public class ProductController extends Controller {
 			setAttr("product",Product.dao.findById(id));
 		}
 		render("detail.html");
+	}
+	public void uploadfile(){
+		int id = 0;
+		if(getPara()!=null){
+			id = getParaToInt();
+			setAttr("id", id);
+			render("uploadfile.html");
+			return;
+		}
+		renderNull();
+	}
+	
+	public void upload(){
+		int maxPostSize = 10 * 1024 * 1024;
+		String path  = PathKit.getWebRootPath();
+		path +="\\img\\product";
+		System.out.println(path);
+		UploadFile upfile = getFile("FILE", path, maxPostSize, "utf-8");
+		String pid = getPara("id");
+		if( upfile.getFile().renameTo(new File(path+"\\"+pid + ".jpg"))){
+			renderHtml("<h2>上传成功</h2>");
+			return;
+		}else{
+			renderHtml("<h2>上传失败</h2>");
+			return;
+		}
 	}
 }

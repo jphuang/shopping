@@ -9,8 +9,8 @@
 					<h3 class="offset1">最新产品</h3>
 					<#list products as p>
 				  		<div class="span2">
-				  		<a href="/product/detail/${p.id}">
-				  		<img alt="${p.name}" src="/img/product.jpg"><br>
+				  		<a href="/product/detail/${p.id}" class="text-center">
+				  		<img   src="/img/product/${p.id}.jpg" width="180px"><br>
 				  		</a>
 				  		<p class="text-center"><strong>${p.name}</strong></p>
 				  		<p class="text-center"><a>会员价:${p.memberprice}元</a></p>

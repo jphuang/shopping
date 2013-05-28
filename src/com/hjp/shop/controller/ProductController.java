@@ -160,7 +160,6 @@ public class ProductController extends Controller {
 		int maxPostSize = 10 * 1024 * 1024;
 		String path  = PathKit.getWebRootPath();
 		path +="\\img\\product";
-		System.out.println(path);
 		UploadFile upfile = getFile("FILE", path, maxPostSize, "utf-8");
 		String pid = getPara("id");
 		if( upfile.getFile().renameTo(new File(path+"\\"+pid + ".jpg"))){

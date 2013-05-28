@@ -33,7 +33,7 @@ public class UserController extends Controller {
 				redirect("/");
 			}
 		} else {
-			this.renderJsp("register.html");
+			this.render("register.html");
 		}
 	}
 

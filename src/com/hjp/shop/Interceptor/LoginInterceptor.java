@@ -9,7 +9,6 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 
 public class LoginInterceptor implements Interceptor {
-
 	public void intercept(ActionInvocation ai) {
 		User user = (User) ai.getController().getSessionAttr("user");
 

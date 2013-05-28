@@ -34,6 +34,11 @@ public class Salesorder extends Model<Salesorder> {
 	public int getLastId(){
 		return findFirst("select id from tbl_salesorder order by id desc limit 1").getInt("id");
 	}
+	/**
+	 * 取得某一页的订单
+	 * @param pageNo 第几页
+	 * @return list for order
+	 */
 	public List<Salesorder> getAllOrder(int pageNo) {
 		return this.paginate(pageNo,Salesorder.pageSize, "select * ", " from tbl_salesorder order by id asc").getList();
 	}

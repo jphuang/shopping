@@ -8,6 +8,7 @@ import com.hjp.shop.controller.CategoryController;
 import com.hjp.shop.controller.IndexController;
 import com.hjp.shop.controller.OrderControlller;
 import com.hjp.shop.controller.ProductController;
+import com.hjp.shop.controller.ReportController;
 import com.hjp.shop.controller.UserController;
 import com.hjp.shop.model.Category;
 import com.hjp.shop.model.Product;
@@ -33,6 +34,7 @@ public class ShopConfig extends JFinalConfig{
 		me.add("/product",ProductController.class);
 		me.add("/cart",CartController.class);
 		me.add("/order",OrderControlller.class);
+		me.add("/report",ReportController.class);
 		
 	}
 

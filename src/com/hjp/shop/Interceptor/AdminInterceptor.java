@@ -5,7 +5,6 @@ import com.jfinal.aop.Interceptor;
 import com.jfinal.core.ActionInvocation;
 
 public class AdminInterceptor implements Interceptor {
-
 	public void intercept(ActionInvocation ai) {
 		User user = (User) ai.getController().getSessionAttr("user");
 		if (user != null && user.get("username").equals("admin")) {
@@ -13,7 +12,6 @@ public class AdminInterceptor implements Interceptor {
 		} else{
 			ai.getController().redirect("/admin/login");
 		}
-	
 	}
 
 }

@@ -57,7 +57,6 @@ public class User extends Model<User> {
 	
 	/**
 	 * 利用MD5进行加密 　　
-	 * 
 	 * @author hjp
 	 * @param String str 待加密的字符串
 	 * @return 　String 加密后的字符串
@@ -72,11 +71,8 @@ public class User extends Model<User> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		byte[] byteArray = md5.digest();
-
 		StringBuffer md5StrBuff = new StringBuffer();
-
 		for (int i = 0; i < byteArray.length; i++) {
 			if (Integer.toHexString(0xFF & byteArray[i]).length() == 1) {
 				md5StrBuff.append("0").append(
@@ -85,7 +81,6 @@ public class User extends Model<User> {
 				md5StrBuff.append(Integer.toHexString(0xFF & byteArray[i]));
 			}
 		}
-
 		return md5StrBuff.toString();
 	}
 

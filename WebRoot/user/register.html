@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>会员注册</title>
-        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-        <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
-        <link href="../css/my.css" rel="stylesheet">
-        <script type="text/javascript" src="../js/jquery.js"></script>
-        <script type="text/javascript" src="../js/my.js"></script>
-        
-    </head>
-    <body >
-        <div class="container" >
-       
-       	    <form class="well form-inline" action="/user/register" method="post" >
+<#include "/common/head.html" />
+        <link href="/css/my.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/my.js"></script>
+        <div class="span4 offset4" >
+       	    <form class="well form-inline " action="/user/register" method="post" >
        	    	<h1>用户注册</h1>
 			    <input type="text" class="input-large" placeholder="用户名" name="username" id="username">
 			    <input type="button" class="btn" value="检测" onclick="verify()">
@@ -23,7 +13,6 @@
                 <div id="div_uname_rule" >
                        <br/>
                        <span class="alert">6~18个字符，包括字母、数字、下划线</span>
-                       <span class="alert ">6~18个字符，包括字母、数字、下划线</span>
                 </div>
                 <!--正常提示 End-->
                 <!--错误提示 Start-->
@@ -46,5 +35,4 @@
     		</form>
         </div>
 		
-    </body>
-</html>
+<#include "/common/tail.html" />

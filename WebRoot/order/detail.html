@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+    </head>
+<body>
+<#if items ?? >
+<#assign prices=0 />
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th width="10%">产品id</th>
+						<th width="20%">产品名字</th>
+						<th width="20%">产品价格</th>
+						<th width="20%">购买数量</th>
+					</tr>
+						<#list items as x>
+					<tr>
+						<td >${x.productid}</td>
+						<td >${x.getProduct(x.productid).name}</td>
+						<td >${x.unitprice}</td>
+						<td >${x.pcount}</td>
+					</tr>
+					<#assign prices =prices + x.unitprice * x.pcount />
+						</#list>
+				</tbody>
+			</table>
+			<label class="btn btn-success offset6">总共￥:${prices} 元</label>
+</#if>
+</body>
+</html>

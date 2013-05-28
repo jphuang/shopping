@@ -41,13 +41,15 @@
 					<a class="brand" href="#"> 江平商城 </a>
 					<ul class="nav">
 						<li class="active"><a href="/">首页</a></li>
-						<li><a href="/product/list/1.jhtml">时尚女装</a></li>
-						<li><a href="/product/list/2.jhtml">精品男装</a></li>
-						<li><a href="/product/list/3.jhtml">精致内衣</a></li>
-						<li><a href="/product/list/4.jhtml">服饰配件</a></li>
-						<li><a href="/product/list/5.jhtml">时尚女鞋</a></li>
-						<li><a href="/product/list/6.jhtml">流行男鞋</a></li>
-						<li><a href="/product/list/9.jhtml">童装童鞋</a></li>
+						<li><a href="/product/list/1.jhtml">特价商品</a></li>
+						<li><a href="/product/list/2.jhtml">推荐商品</a></li>
+						<li><a href="/">最新商品</a></li>
+						<li><a href="/product/list/4.jhtml">导航分类</a></li>
+						<li><a href="/product/list/5.jhtml">商城动态</a></li>
+						<li><a href="/user/selfServer">会员中心</a></li>
+						<li><a href="/product/list/9.jhtml">在线留言</a></li>
+						<li><a href="/product/list/9.jhtml">商城社区</a></li>
+						<li><a href="/product/list/9.jhtml">在线帮助</a></li>
 					</ul>
 				</div>
 			</div>
@@ -60,29 +62,53 @@
 					<ul class="nav">
 						<li ><a href="#">热销</a></li>
 						<li ><img src="/img/hot.gif"></li>
-						<li><a href="#">最新</a></li>
+						<li><a href="/">最新</a></li>
 						<li ><img src="/img/new.gif"></li>
 					</ul>
 				</div>
 				<div class="span5">
 					<ul class="nav">
 					<li><a>热门搜索:</a></li> 
-					<li><a href="">T恤</a></li>  
-					<li><a href="">衬衫</a></li> 
-					<li><a href="">西服</a></li> 
-					<li><a href="">西裤</a></li> 
-					<li><a href="">森马</a></li>  
-					<li><a href="">七匹狼</a></li>  
+					<li><a href="/product/simpleSearch?search=爱情">爱情</a></li>  
+					<li><a href="/product/simpleSearch?search=iphone">iphone</a></li> 
+					<li><a href="/product/simpleSearch?search=三星">三星</a></li> 
+					<li><a href="/product/simpleSearch?search=西裤">西裤</a></li> 
+					<li><a href="/product/simpleSearch?search=笔记本">笔记本</a></li>  
 					</ul>
 			    </div>
 				<div class="span3">
-					<form id="productSearchForm" action="#" method="get">
-						<input class="search-query span2"  Splaceholder="搜索" type="text">
+					<form id="productSearchForm" action="/product/simpleSearch" method="get">
+						<input class="search-query span2"  Splaceholder="搜索" type="text" name="search">
 						<button type="submit" class="btn">搜索</button>
 					</form>
 				</div>
 			</div>
 			</div>
 		</div>
+		
+		
+		<div class="span2">
+	      <div class="pull-left">
+              <div class="dropdown clearfix open">
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                  <#list categortList as category>
+                  	<#if (category.isleaf = 0)>
+                  		<li class="dropdown-submenu">
+		                    <a tabindex="-1" >${category.name}</a>
+		                    <ul class="dropdown-menu">
+		                    	<#list category.getAllCategoryByPid(category.id) as categ>
+		                      		<li><a tabindex="-1" href="/product/listByCategory/${categ.id}">${categ.name}</a></li>
+		                      	</#list>
+		                    </ul>
+	                    </li>
+	                 <#else>
+                  		<li><a tabindex="-1" href="/product/listByCategory/${category.id}">${category.name}</a></li>
+                  	</#if>
+                  	<li class="divider"></li>
+                  </#list>
+                </ul>
+              </div>
+            </div>
+		</div>
 	</div>
-
+	

@@ -71,5 +71,8 @@ public class Product extends Model<Product> {
 		String sql = "select * from tbl_product order by pdate desc limit 0," + count;
 		return find(sql);
 	}
+	public List<Product> getProdutByCid(int cid) {
+		return find("select * from tbl_product where categoryid =" + cid);
+	}
 
 }

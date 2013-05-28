@@ -1,16 +1,7 @@
 <#include "/common/head.html">
 	<script  src="/js/cart.js"></script>
 	<div class="container">
-		<div class="span2">
-			<ul class="nav nav-pills nav-stacked pull-left">
-				<li><a href="/user/userinfo/info" >用户信息</a></li>
-				<li><a href="/user/userinfo/update" >修改资料</a></li>
-				<li><a href="/user/userinfo/updatePassword" >修改密码</a></li>
-				<li><a href="">我的订单</a></li>
-				<li><a href="">我的购物车</a></li>
-			</ul>
-		</div>
-		<div class="span9">
+		<div class="span9 pull-right">
 			<h3>购物车</h3> 
 			<#if items ?? >
 			<table class="table table-bordered table-striped">

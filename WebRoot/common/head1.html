@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet"	href="/css/bootstrap.min.css" />
+	<script  src="/js/jquery.js"></script>
+	<style type="text/css">
+		body{
+			background-color:#EEDDEE;
+		}
+	</style>
+	</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="row">
+				 <img alt="正品保障" src="/img/head.jpg" >
+				<ul class="nav pull-right">
+					<#if user ??>
+						<li ><a href="/user/selfServer">你好！${user.username}</a></li>
+						<li ><a href="/user/logout">[退出]</a></li>
+						<#if (user.username=="admin")>
+							<li><a href="/admin" >管理后台</a></li>
+						</#if>
+					<#else>
+						<li ><a href="/user/login">登录</a></li>
+						<li ><a href="/user/register">注册</a></li>
+					</#if>
+					<li><a href="/article/list/7.html">关于我们</a></li>
+				</ul>
+				</div>
+				<div class="pull-right">
+					 <img alt="购物车" src="/img/cart.jpg">&nbsp;&nbsp;<a href="/cart"><strong>购物车</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					客服热线: <strong>400-8888888</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+		</div>
+
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner ">
+				<div class="container">
+					<a class="brand" href="#"> 江平商城 </a>
+					<ul class="nav">
+						<li class="active"><a href="/">首页</a></li>
+						<li><a href="/product/list/1.jhtml">特价商品</a></li>
+						<li><a href="/product/list/2.jhtml">推荐商品</a></li>
+						<li><a href="/">最新商品</a></li>
+						<li><a href="/product/list/4.jhtml">导航分类</a></li>
+						<li><a href="/product/list/5.jhtml">商城动态</a></li>
+						<li><a href="/user/selfServer">会员中心</a></li>
+						<li><a href="/product/list/9.jhtml">在线留言</a></li>
+						<li><a href="/product/list/9.jhtml">商城社区</a></li>
+						<li><a href="/product/list/9.jhtml">在线帮助</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="span3">
+					<ul class="nav">
+						<li ><a href="#">热销</a></li>
+						<li ><img src="/img/hot.gif"></li>
+						<li><a href="/">最新</a></li>
+						<li ><img src="/img/new.gif"></li>
+					</ul>
+				</div>
+				<div class="span5">
+					<ul class="nav">
+					<li><a>热门搜索:</a></li> 
+					<li><a href="/product/simpleSearch?search=爱情">爱情</a></li>  
+					<li><a href="/product/simpleSearch?search=iphone">iphone</a></li> 
+					<li><a href="/product/simpleSearch?search=三星">三星</a></li> 
+					<li><a href="/product/simpleSearch?search=西裤">西裤</a></li> 
+					<li><a href="/product/simpleSearch?search=笔记本">笔记本</a></li>  
+					</ul>
+			    </div>
+				<div class="span3">
+					<form id="productSearchForm" action="/product/simpleSearch" method="get">
+						<input class="search-query span2"  Splaceholder="搜索" type="text" name="search">
+						<button type="submit" class="btn">搜索</button>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	

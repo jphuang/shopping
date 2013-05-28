@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.hjp.shop.model.Cart;
 import com.hjp.shop.model.CartItem;
-import com.hjp.shop.model.Product;
 import com.hjp.shop.model.Salesitem;
 import com.hjp.shop.model.Salesorder;
 import com.hjp.shop.model.User;
@@ -122,5 +121,17 @@ public class OrderControlller extends Controller {
 			}
 		}
 		renderNull();
+	}
+	
+	public void detail(){
+		int oid =0;
+		if(getPara()!=null){
+			oid = getParaToInt();
+		}
+		if(oid>0){
+			List<Salesitem> items = Salesitem.dao.getItemByOid(oid);
+			setAttr("items",	 items);
+		}
+		render("detail.html");
 	}
 }

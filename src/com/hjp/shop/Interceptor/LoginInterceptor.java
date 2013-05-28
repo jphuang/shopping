@@ -2,6 +2,7 @@ package com.hjp.shop.Interceptor;
 
 import java.util.Date;
 
+import com.hjp.shop.model.Category;
 import com.hjp.shop.model.User;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.core.ActionInvocation;
@@ -19,6 +20,7 @@ public class LoginInterceptor implements Interceptor {
 				Db.save("tbl_log",log);
 			}
 		}
+		ai.getController().setAttr("categortList" ,Category.dao.getAllFirstLevelCategory());
 		ai.invoke();
 	}
 }

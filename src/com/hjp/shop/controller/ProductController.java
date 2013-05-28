@@ -170,4 +170,29 @@ public class ProductController extends Controller {
 			return;
 		}
 	}
+	
+	public void listByCategory(){
+		int cid = 0;
+		if(getPara()!=null){
+			cid = getParaToInt();
+		}
+		if(cid>0){
+			List<Product> products = Product.dao.getProdutByCid(cid);
+			String info = Category.dao.findById(cid).getStr("name");
+			setAttr("info", info);
+			setAttr("products", products);
+			render("/index.html");
+		}
+	}
+	
+	public void simpleSearch(){
+		String search =getPara("search");
+		if(search!=null){
+			List<Product> products = Product.dao.search(0, search,-1, -1, -1,-1,null,null);
+			setAttr("info", search);
+			setAttr("products", products);
+			render("/index.html");
+		}
+		
+	}
 }

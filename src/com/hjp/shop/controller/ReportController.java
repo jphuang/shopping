@@ -38,7 +38,7 @@ public class ReportController extends Controller {
 	        String path  = PathKit.getWebRootPath();
 			String path1 =path + "\\img\\report\\rep.png";
 			String path2 =path + "\\img\\report\\pie.png";
-	        saveAsFile(freeChart, path1, 500, 400);
+	        saveAsFile(freeChart, path1, 600, 400);
 	        saveAsFile(freeChart2, path2, 500, 400);
 	        render("report.html");
 		}

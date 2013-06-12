@@ -51,9 +51,18 @@ public class Category extends Model<Category> {
 	public List<Category> getAllLeafCategory() {
 		return find("select id,name from tbl_category where isleaf = 1");
 	}
+	/**取得所有的一级商品类别
+	 * 
+	 * @return
+	 */
 	public List<Category> getAllFirstLevelCategory() {
 		return find("select * from tbl_category where pid = 0");
 	}
+	/**
+	 * 根据父id取得子节点
+	 * @param pid 父id
+	 * @return
+	 */
 	public List<Category> getAllCategoryByPid(int pid) {
 		return find("select * from tbl_category where pid = " + pid);
 	}

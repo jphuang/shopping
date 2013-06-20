@@ -18,9 +18,9 @@ public class User extends Model<User> {
 	public static User dao = new User();
 	
 	/**
-	 * È¡µÃÊı¾İ¿âÖĞµÄÄ³Ò»Ò³Êı¾İ
-	 * @param pageNo µÚ¼¸Ò³
-	 * @return  pageSize Ìõ¼ÇÂ¼
+	 * å–å¾—æ•°æ®åº“ä¸­çš„æŸä¸€é¡µæ•°æ®
+	 * @param pageNo ç¬¬å‡ é¡µ
+	 * @return  pageSize æ¡è®°å½•
 	 */
 	public Page<User> getAlldate(int pageNo) {
 		
@@ -28,17 +28,17 @@ public class User extends Model<User> {
 	}
 	
 	/**
-	 *¼ì²éÊı¾İ¿âÖĞÓĞÃ»ÓĞÕâ¸öÓÃ»§Ãû
-	 * @param username String  Òª¼ì²éµÄÓÃ»§Ãû
-	 * @return String Ã»ÓĞ·µ»Øyes£¬ÓĞ·µ»Øno
+	 *æ£€æŸ¥æ•°æ®åº“ä¸­æœ‰æ²¡æœ‰è¿™ä¸ªç”¨æˆ·å
+	 * @param username String  è¦æ£€æŸ¥çš„ç”¨æˆ·å
+	 * @return String æ²¡æœ‰è¿”å›yesï¼Œæœ‰è¿”å›no
 	 */
 	public String verify(String username) {
 		String sqlString = "select * from tbl_user where username='" + username + "'";
 		return User.dao.findFirst(sqlString)==null ? "yes" : "no";
 	}
 	/**
-	 * ¸ù¾İÓÃ»§ÃûÈ¡µÃÊı¾İ¿âUserµÄÒ»Ìõ¼ÇÂ¼
-	 * @param name String ÓÃ»§Ãû
+	 * æ ¹æ®ç”¨æˆ·åå–å¾—æ•°æ®åº“Userçš„ä¸€æ¡è®°å½•
+	 * @param name String ç”¨æˆ·å
 	 * @return  User 
 	 */
 	public User getUserByName(String name){
@@ -46,8 +46,8 @@ public class User extends Model<User> {
 		return User.dao.findFirst(sqlString);
 	}
 	/**
-	 * ¸ù¾İÓÃ»§ÃûÈ¡µÃÏà¶ÔÓ¦µÄÓÃ»§ÃÜÂë
-	 * @param username ÓÃ»§Ãû
+	 * æ ¹æ®ç”¨æˆ·åå–å¾—ç›¸å¯¹åº”çš„ç”¨æˆ·å¯†ç 
+	 * @param username ç”¨æˆ·å
 	 * @return String password
 	 */
 	public String getPasswordByusername(String username) {
@@ -56,13 +56,13 @@ public class User extends Model<User> {
 	}
 	
 	/**
-	 * ÀûÓÃMD5½øĞĞ¼ÓÃÜ ¡¡¡¡
+	 * åˆ©ç”¨MD5è¿›è¡ŒåŠ å¯† ã€€ã€€
 	 * @author hjp
-	 * @param String str ´ı¼ÓÃÜµÄ×Ö·û´®
-	 * @return ¡¡String ¼ÓÃÜºóµÄ×Ö·û´®
+	 * @param String str å¾…åŠ å¯†çš„å­—ç¬¦ä¸²
+	 * @return ã€€String åŠ å¯†åçš„å­—ç¬¦ä¸²
 	 */
 	public  static String EncoderByMd5(String str) {
-		// È·¶¨¼ÆËã·½·¨
+		// ç¡®å®šè®¡ç®—æ–¹æ³•
 		MessageDigest md5 = null;
 		try {
 			md5 = MessageDigest.getInstance("MD5");

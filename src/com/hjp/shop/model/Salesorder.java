@@ -10,17 +10,17 @@ public class Salesorder extends Model<Salesorder> {
 	private static final int pageSize = 5;
 	public static Salesorder dao = new Salesorder();
 	/**
-	 * È¡µÃÊı¾İ¿âÖĞµÄ¼ÇÂ¼ÌõÊı/pagesize
-	 * @return int Ò³Êı
+	 * å–å¾—æ•°æ®åº“ä¸­çš„è®°å½•æ¡æ•°/pagesize
+	 * @return int é¡µæ•°
 	 */
 	public long  getCountPage(){
 		long count = findFirst("select count(*) count from tbl_salesorder").getLong("count");
 		return (count +Salesorder.pageSize -1)/Salesorder.pageSize ;
 	}
 	/**
-	 * Í¨¹ıÓÃ»§idÈ¡µÃÄ³Ò»¸öÓÃ»§µÄËùÓĞ¶©µ¥
-	 * @param uid ÓÃ»§id
-	 * @return ¶©µ¥ÁĞ±í
+	 * é€šè¿‡ç”¨æˆ·idå–å¾—æŸä¸€ä¸ªç”¨æˆ·çš„æ‰€æœ‰è®¢å•
+	 * @param uid ç”¨æˆ·id
+	 * @return è®¢å•åˆ—è¡¨
 	 * 
 	 */
 	public List<Salesorder> getOrdersByUid(int uid) {
@@ -28,15 +28,15 @@ public class Salesorder extends Model<Salesorder> {
 		return find(sql);
 	}
 	/**
-	 * È¡µÃ×î´óµÄÄÇ¸öid£¬Ò»°ãÓÃÀ´È¡µÃ¸Õ×Ô¶¯Éú³ÉµÄÄÇ¸öid£¬Õâ¸öÉæ¼°µ½ÊÂÎñÎÊÌâ
+	 * å–å¾—æœ€å¤§çš„é‚£ä¸ªidï¼Œä¸€èˆ¬ç”¨æ¥å–å¾—åˆšè‡ªåŠ¨ç”Ÿæˆçš„é‚£ä¸ªidï¼Œè¿™ä¸ªæ¶‰åŠåˆ°äº‹åŠ¡é—®é¢˜
 	 * @return int id 
 	 */
 	public int getLastId(){
 		return findFirst("select id from tbl_salesorder order by id desc limit 1").getInt("id");
 	}
 	/**
-	 * È¡µÃÄ³Ò»Ò³µÄ¶©µ¥
-	 * @param pageNo µÚ¼¸Ò³
+	 * å–å¾—æŸä¸€é¡µçš„è®¢å•
+	 * @param pageNo ç¬¬å‡ é¡µ
 	 * @return list for order
 	 */
 	public List<Salesorder> getAllOrder(int pageNo) {

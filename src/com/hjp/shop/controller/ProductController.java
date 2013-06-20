@@ -28,9 +28,9 @@ public class ProductController extends Controller {
 					.set("memberprice", memberprice)
 					.set("categoryid", categoryId).set("pdate", new Date());
 			if (p.save()) {
-				setAttr("info", "添加成功");
+				setAttr("info", "娣诲姞鎴愬姛");
 			} else {
-				setAttr("info", "添加失败");
+				setAttr("info", "娣诲姞澶辫触");
 			}
 		}
 		render("add.html");
@@ -116,9 +116,9 @@ public class ProductController extends Controller {
 			.set("memberprice", memberprice)
 			.set("categoryid", categoryId);
 			if (p.update()) {
-				setAttr("info", "更新成功");
+				setAttr("info", "鏇存柊鎴愬姛");
 			} else {
-				setAttr("info", "更新失败");
+				setAttr("info", "鏇存柊澶辫触");
 			}
 		}
 		this.setAttr("categories", Category.dao.getAllLeafCategory());
@@ -163,10 +163,10 @@ public class ProductController extends Controller {
 		UploadFile upfile = getFile("FILE", path, maxPostSize, "utf-8");
 		String pid = getPara("id");
 		if( upfile.getFile().renameTo(new File(path+"\\"+pid + ".jpg"))){
-			renderHtml("<h2>上传成功</h2>");
+			renderHtml("<h2>涓婁紶鎴愬姛</h2>");
 			return;
 		}else{
-			renderHtml("<h2>上传失败</h2>");
+			renderHtml("<h2>涓婁紶澶辫触</h2>");
 			return;
 		}
 	}

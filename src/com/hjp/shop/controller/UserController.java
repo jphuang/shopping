@@ -95,14 +95,14 @@ public class UserController extends Controller {
 		String phone = getPara("phone");
 		String addr = getPara("addr");
 		if (phone == null || addr == null) {
-			renderHtml("<span class='red'>µç»°ºÍµØÖ·¶¼²»ÄÜÎª¿Õ<span>");
+			renderHtml("<span class='red'>ç”µè¯å’Œåœ°å€éƒ½ä¸èƒ½ä¸ºç©º<span>");
 		} else {
 			user.set("phone", phone);
 			user.set("addr", addr);
 			if (!user.update()) {
-				renderHtml("<span class='red'>ĞŞ¸ÄÊ§°Ü<span>");
+				renderHtml("<span class='red'>ä¿®æ”¹å¤±è´¥<span>");
 			} else {
-				renderHtml("<span class='green'>ĞŞ¸Ä³É¹¦<span>");
+				renderHtml("<span class='green'>ä¿®æ”¹æˆåŠŸ<span>");
 			}
 		}
 	}
@@ -114,18 +114,18 @@ public class UserController extends Controller {
 		String password2 = getPara("password2");
 
 		if (password == null || !User.EncoderByMd5(password).equals(user.get("password"))) {
-			renderHtml("<span class='red'>¾ÉÃÜÂë²»ÕıÈ·<span>");
+			renderHtml("<span class='red'>æ—§å¯†ç ä¸æ­£ç¡®<span>");
 			return;
 		}
 		if (password1 != null && password1.equals(password2)) {
 			user.set("password", User.EncoderByMd5(password1));
 			if (user.update()) {
-				renderHtml("<span class='green'>ÃÜÂëĞŞ¸Ä³É¹¦<span>");
+				renderHtml("<span class='green'>å¯†ç ä¿®æ”¹æˆåŠŸ<span>");
 			} else {
-				renderHtml("<span class='red'>ÃÜÂëĞŞ¸Ä³É¹¦<span>");
+				renderHtml("<span class='red'>å¯†ç ä¿®æ”¹æˆåŠŸ<span>");
 			}
 		} else {
-			renderHtml("<span class='red'>Á½¸öÃÜÂë²»Ò»Ñù<span>");
+			renderHtml("<span class='red'>ä¸¤ä¸ªå¯†ç ä¸ä¸€æ ·<span>");
 		}
 	}
 	public void logout(){

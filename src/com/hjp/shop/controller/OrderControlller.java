@@ -21,14 +21,14 @@ public class OrderControlller extends Controller {
 		}
 		render("order.html");
 	}
-	//Ìí¼ÓÊÂÎñÀ¹½ØÆ÷
+	//æ·»åŠ äº‹åŠ¡æ‹¦æˆªå™¨
 	@Before (Tx.class)
 	public void add(){
 		String username = getPara("username");
 		String phone =getPara("phone");
 		String addr = getPara("addr");
 		if(username!=null && phone!=null && addr!=null){
-			addr = addr + "/" + username + "£¨ÊÕ£© " + "µç»°: " + phone;
+			addr = addr + "/" + username + "ï¼ˆæ”¶ï¼‰ " + "ç”µè¯: " + phone;
 			int id = ((User)getSessionAttr("user")).getInt("id");
 			Salesorder order = new Salesorder();
 			order.set("userid", id).set("addr", addr).set("odate",new Date()).set("status",0);
@@ -46,10 +46,10 @@ public class OrderControlller extends Controller {
 				iok = iok && si.save();
 			}
 			if(ook && iok){
-				setAttr("info", "ÏÂ¶©µ¥³É¹¦£¡");
+				setAttr("info", "ä¸‹è®¢å•æˆåŠŸï¼");
 				setSessionAttr("cart", null);
 			}else{
-				setAttr("info", "ÏÂ¶©µ¥Ê§°Ü£¡");
+				setAttr("info", "ä¸‹è®¢å•å¤±è´¥ï¼");
 			}
 		}
 		render("addOk.html");

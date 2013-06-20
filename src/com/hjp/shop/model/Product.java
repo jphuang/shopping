@@ -17,16 +17,16 @@ public class Product extends Model<Product> {
 		return this.paginate(pageNo,Product.pageSize, "select * ", " from tbl_product order by id asc");
 	}
    /**
-    * È¡µÃÌõ¼ş·ûºÏµÄ²úÆ·ÁĞ±í
-    * @param categoryid  Àà±ğºÅ
-    * @param keyword  ¹Ø¼ü´Ê
-    * @param minNormalprice  ×îĞ¡Õı³£¼Û¸ñ
-    * @param maxNormalprice ×î´óÕı³£¼Û¸ñ
-    * @param minMemberprice ×îĞ¡»áÔ±¼Û¸ñ
-    * @param maxMembelprice ×î´ó»áÔ±¼Û¸ñ
-    * @param minpdate  ×îÔçÉÏ¼ÜÊ±¼ä
-    * @param maxpdate ×îÍíÉÏ¼ÜÊ±¼ä
-    * @return ²úÆ·ÁĞ±í
+    * å–å¾—æ¡ä»¶ç¬¦åˆçš„äº§å“åˆ—è¡¨
+    * @param categoryid  ç±»åˆ«å·
+    * @param keyword  å…³é”®è¯
+    * @param minNormalprice  æœ€å°æ­£å¸¸ä»·æ ¼
+    * @param maxNormalprice æœ€å¤§æ­£å¸¸ä»·æ ¼
+    * @param minMemberprice æœ€å°ä¼šå‘˜ä»·æ ¼
+    * @param maxMembelprice æœ€å¤§ä¼šå‘˜ä»·æ ¼
+    * @param minpdate  æœ€æ—©ä¸Šæ¶æ—¶é—´
+    * @param maxpdate æœ€æ™šä¸Šæ¶æ—¶é—´
+    * @return äº§å“åˆ—è¡¨
     */
 	public List<Product> search(int categoryid,
 												String keyword,

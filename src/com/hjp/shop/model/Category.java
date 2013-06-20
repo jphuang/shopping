@@ -9,7 +9,7 @@ public class Category extends Model<Category> {
 
 	private static final long serialVersionUID = 1L;
 
-	// daoÊı¾İ³ĞÔØ¶ÔÏó
+	// daoæ•°æ®æ‰¿è½½å¯¹è±¡
 	public static Category dao = new Category();
 
 	public List<Category> getCategories() {
@@ -19,12 +19,12 @@ public class Category extends Model<Category> {
 	}
 
 	/**
-	 * µİ¹éÄÃ³öÊı¾İ¿âÖĞµÄÄ¿Â¼Êı¾İ
+	 * é€’å½’æ‹¿å‡ºæ•°æ®åº“ä¸­çš„ç›®å½•æ•°æ®
 	 * 
 	 * @param lists
-	 *            ´æ´¢µÄÊı¾İµÄlist
+	 *            å­˜å‚¨çš„æ•°æ®çš„list
 	 * @param pid
-	 *            ¸¸ID
+	 *            çˆ¶ID
 	 */
 	public void getCategories(List<Category> lists, int pid) {
 		List<Category> clist = find("select * from tbl_category where pid ="
@@ -44,14 +44,14 @@ public class Category extends Model<Category> {
 	}
 
 	/**
-	 * È¡µÃËùÓĞµÄÒ¶×Ó½ÚµãµÄcategory
+	 * å–å¾—æ‰€æœ‰çš„å¶å­èŠ‚ç‚¹çš„category
 	 * 
 	 * @return list Category
 	 */
 	public List<Category> getAllLeafCategory() {
 		return find("select id,name from tbl_category where isleaf = 1");
 	}
-	/**È¡µÃËùÓĞµÄÒ»¼¶ÉÌÆ·Àà±ğ
+	/**å–å¾—æ‰€æœ‰çš„ä¸€çº§å•†å“ç±»åˆ«
 	 * 
 	 * @return
 	 */
@@ -59,8 +59,8 @@ public class Category extends Model<Category> {
 		return find("select * from tbl_category where pid = 0");
 	}
 	/**
-	 * ¸ù¾İ¸¸idÈ¡µÃ×Ó½Úµã
-	 * @param pid ¸¸id
+	 * æ ¹æ®çˆ¶idå–å¾—å­èŠ‚ç‚¹
+	 * @param pid çˆ¶id
 	 * @return
 	 */
 	public List<Category> getAllCategoryByPid(int pid) {

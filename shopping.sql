@@ -1,4 +1,4 @@
---Êı¾İ¿âÃüÃûÈ«²¿Ğ¡Ğ´
+--æ•°æ®åº“å‘½åå…¨éƒ¨å°å†™
 create database shopping;
 
 use shopping;
@@ -19,7 +19,7 @@ create table tbl_category
 	name varchar(255),
 	descr varchar(255),
 	pid int,
-	isleaf int ,#0±íÊ¾leaf 1±íÊ¾·Çleaf
+	isleaf int ,#0è¡¨ç¤ºleaf 1è¡¨ç¤ºéleaf
 	grade int
 );
 

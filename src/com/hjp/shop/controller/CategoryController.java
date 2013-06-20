@@ -56,9 +56,9 @@ public class CategoryController extends Controller {
 				c.set("name", name).set("descr", descr).set("pid", 0)
 						.set("isleaf", 1).set("grade", 1);
 				if (c.save()) {
-					setAttr("info", "Ìí¼Ó³É¹¦");
+					setAttr("info", "æ·»åŠ æˆåŠŸ");
 				} else {
-					setAttr("info", "Ìí¼ÓÊ§°Ü");
+					setAttr("info", "æ·»åŠ å¤±è´¥");
 				}
 
 			}

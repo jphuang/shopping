@@ -33,36 +33,34 @@ shopping
 
 
 ### 3 file->open 选择shopping所在的文件夹，点OK
-    我的是在（F:\code\shopping ） 这个文件夹
-    ![maze](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/172184A575A543F586B94CFAC6DAF8E0/4576)
+我的是在（F:\code\shopping ） 这个文件夹
 
-     
+   ![maze](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/172184A575A543F586B94CFAC6DAF8E0/4576)
+#### 项目配置
+   ![2](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/516671BF6D5A4462A904CD8D49B2F028/4582)
+   #### project   
+   ![3](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/006DE2DDF89E4F4495F0D8D7D5433162/4586)
+   #### modules
+   ![4](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/EC72D4DE21844D46AD2C9B36478C443E/4588)
+   #### paths
+   ![5](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/9462E5C7AED74992B882A575F6954E74/4590)
+   #### add web
+   ![6](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/F0D8236929BE4385AC6C185E92B78260/4593)
+  #### web path
+   ![7](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/BF7410DAD6D747289AE985993396F5C9/4595)
+   #### lib
+   ![9](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/4E968447F9274E3ABE41113AC6DAD0E8/4597)
+   #### artifacts
+   ![10](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/93BC7D0BBD754781B7AC3A2E43547473/4600)
+ 
+### 启动界面
     
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-    启动界面
-
-    
-    登录界面
-    http://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/52839CF6F01E471EBB95DA6E089A8003/4606
+   ![10](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/0F718902E72B47139E19155C609CFBA8/4603)
+###    登录界面
+   ![10](http://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/52839CF6F01E471EBB95DA6E089A8003/4606)
     
     
-    启动地址是：http://127.0.0.1:8090  ，后台地址是： http://127.0.0.1:8090/admin    登录账号和密码是： admin/admin
+-     启动地址是：http://127.0.0.1:8090  
+-     后台地址是： http://127.0.0.1:8090/admin    
+-     登录账号和密码是： admin/admin
 	

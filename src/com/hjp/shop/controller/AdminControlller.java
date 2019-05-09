@@ -7,7 +7,6 @@ import com.hjp.shop.model.User;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.core.Controller;
-import com.mchange.v2.c3p0.impl.NewPooledConnection;
 
 @Before(AdminInterceptor.class)
 public class AdminControlller extends Controller {
@@ -40,7 +39,7 @@ public class AdminControlller extends Controller {
 		if(pageNo > pageCount){
 			pageNo =(int)pageCount;
 		}
-		this.setAttr("userPage", User.dao.getAlldate(pageNo));
+		this.setAttr("userPage", User.dao.getAllDate(pageNo));
 		setAttr("pageNo",pageNo);
 		setAttr("pageCount",pageCount);
 		render("listUser.html");
@@ -64,15 +63,11 @@ public class AdminControlller extends Controller {
 		if (getPara("login") == null || !getPara("login").equals("ok")) {
 			render("login.html");
 		} else {
-			String usernameString = getPara("username");
-			String passwordString = getPara("password");
-
-			passwordString = User.EncoderByMd5(passwordString);
-
-			if (passwordString.equals(User.dao
-					.getPasswordByusername(usernameString)))
-			{
-				this.setSessionAttr("user", User.dao.getUserByName(usernameString));
+			String userName = getPara("username");
+			String password = getPara("password");
+			password = User.EncoderByMd5(password);
+			if (password.equalsIgnoreCase(User.dao.getPasswordByusername(userName))) {
+				this.setSessionAttr("user", User.dao.getUserByName(userName));
 				redirect("/admin");
 			}
 		}

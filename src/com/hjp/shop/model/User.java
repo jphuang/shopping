@@ -2,6 +2,7 @@ package com.hjp.shop.model;
 
 
 import java.security.MessageDigest;
+import java.util.Objects;
 
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
@@ -13,18 +14,17 @@ public class User extends Model<User> {
 	 */
 	private static final long serialVersionUID = 3025124637286140521L;
 	
-	private static final int pageSize = 5;	
+	private static final int PAGE_SIZE = 5;
 	
 	public static User dao = new User();
 	
 	/**
 	 * 取得数据库中的某一页数据
 	 * @param pageNo 第几页
-	 * @return  pageSize 条记录
+	 * @return  PAGE_SIZE 条记录
 	 */
-	public Page<User> getAlldate(int pageNo) {
-		
-		return this.paginate(pageNo,User.pageSize, "select * ", " from tbl_user order by id asc");
+	public Page<User> getAllDate(int pageNo) {
+		return this.paginate(pageNo,User.PAGE_SIZE, "select * ", " from tbl_user order by id asc");
 	}
 	
 	/**
@@ -33,8 +33,8 @@ public class User extends Model<User> {
 	 * @return String 没有返回yes，有返回no
 	 */
 	public String verify(String username) {
-		String sqlString = "select * from tbl_user where username='" + username + "'";
-		return User.dao.findFirst(sqlString)==null ? "yes" : "no";
+		String sqlString = "select * from tbl_user where username= ? ";
+		return User.dao.findFirst(sqlString,username)==null ? "yes" : "no";
 	}
 	/**
 	 * 根据用户名取得数据库User的一条记录
@@ -42,8 +42,8 @@ public class User extends Model<User> {
 	 * @return  User 
 	 */
 	public User getUserByName(String name){
-		String sqlString = "select * from tbl_user where username = '" + name + "'";
-		return User.dao.findFirst(sqlString);
+		String sqlString = "select * from tbl_user where username = ?";
+		return User.dao.findFirst(sqlString,name);
 	}
 	/**
 	 * 根据用户名取得相对应的用户密码
@@ -51,14 +51,18 @@ public class User extends Model<User> {
 	 * @return String password
 	 */
 	public String getPasswordByusername(String username) {
-		String sqlString = "select password from tbl_user where username = '" + username + "'";
-		return User.dao.findFirst(sqlString).getStr("password");
+		String sqlString = "select password from tbl_user where username = ?";
+		User first = User.dao.findFirst(sqlString, username);
+		if(Objects.isNull(first)){
+			return null;
+		}
+		return first.getStr("password");
 	}
 	
 	/**
 	 * 利用MD5进行加密 　　
 	 * @author hjp
-	 * @param String str 待加密的字符串
+	 * @param  str 待加密的字符串
 	 * @return 　String 加密后的字符串
 	 */
 	public  static String EncoderByMd5(String str) {
@@ -71,8 +75,9 @@ public class User extends Model<User> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		assert md5 != null;
 		byte[] byteArray = md5.digest();
-		StringBuffer md5StrBuff = new StringBuffer();
+		StringBuilder md5StrBuff = new StringBuilder();
 		for (int i = 0; i < byteArray.length; i++) {
 			if (Integer.toHexString(0xFF & byteArray[i]).length() == 1) {
 				md5StrBuff.append("0").append(
@@ -85,7 +90,7 @@ public class User extends Model<User> {
 	}
 
 	public long getPageCount() {
-		long count = findFirst("select count(*) count from tbl_user").getLong("count");
-		return (count + User.pageSize -1)/User.pageSize;
+		long count = findFirst("select count(1) count from tbl_user").getLong("count");
+		return (count + User.PAGE_SIZE -1)/User.PAGE_SIZE;
 	}
 }

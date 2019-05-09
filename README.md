@@ -18,3 +18,51 @@ shopping
 注意： 请确保您安装了 JavaSE 1.6 或更高版本，tomcat下运行项目需要先删除 jetty-server-xxx.jar，否则会有冲突
 
 	我本来想整理下这个项目，但是自己运行后发现太丑了，见不得人，有谁想玩的话，发邮件给我
+	
+	
+## idea启动项目
+- 本地安装mysql（驱动用的是mysql-connector-java-8.0.13.jar，最好检查你本地数据库的版本是兼容）
+- 安装jdk6以上，文档用的是jdk8
+- 安装idea，文档用的版本是 IDEA 2018.3
+- 本地安装git
+
+### 1 clone 项目
+    git clone https://github.com/jphuang/shopping.git
+
+### 2 打开idea
+
+
+### 3 file->open 选择shopping所在的文件夹，点OK
+    我的是在（F:\code\shopping ） 这个文件夹
+    ![maze](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/172184A575A543F586B94CFAC6DAF8E0/4576)
+
+     
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    启动界面
+
+    
+    登录界面
+    http://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/52839CF6F01E471EBB95DA6E089A8003/4606
+    
+    
+    启动地址是：http://127.0.0.1:8090  ，后台地址是： http://127.0.0.1:8090/admin    登录账号和密码是： admin/admin
+	

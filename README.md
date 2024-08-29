@@ -18,8 +18,9 @@ shopping
 注意： 请确保您安装了 JavaSE 1.6 或更高版本，tomcat下运行项目需要先删除 jetty-server-xxx.jar，否则会有冲突
 
 	我本来想整理下这个项目，但是自己运行后发现太丑了，见不得人，有谁想玩的话，发邮件给我
-	
-	
+
+
+​	
 ## idea启动项目
 - 本地安装mysql（驱动用的是mysql-connector-java-8.0.13.jar，最好检查你本地数据库的版本是兼容）
 - 安装jdk6以上，文档用的是jdk8
@@ -35,32 +36,30 @@ shopping
 ### 3 file->open 选择shopping所在的文件夹，点OK
 我的是在（F:\code\shopping ） 这个文件夹
 
-   ![maze](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/172184A575A543F586B94CFAC6DAF8E0/4576)
+  ![image-20240829143742429](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829143742429.png)
 #### 项目配置
-   ![2](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/516671BF6D5A4462A904CD8D49B2F028/4582)
+![image-20240829143804836](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829143804836.png)
    #### project   
-   ![3](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/006DE2DDF89E4F4495F0D8D7D5433162/4586)
+   ![image-20240829143857980](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829143857980.png)
    #### modules
-   ![4](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/EC72D4DE21844D46AD2C9B36478C443E/4588)
+ ![image-20240829143918353](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829143918353.png)
    #### paths
-   ![5](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/9462E5C7AED74992B882A575F6954E74/4590)
+  ![image-20240829143947489](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829143947489.png)
    #### add web
-   ![6](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/F0D8236929BE4385AC6C185E92B78260/4593)
+![image-20240829144010601](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144010601.png)
   #### web path
-   ![7](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/BF7410DAD6D747289AE985993396F5C9/4595)
+ ![image-20240829144030318](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144030318.png)
    #### lib
-   ![9](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/4E968447F9274E3ABE41113AC6DAD0E8/4597)
+ ![image-20240829144227778](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144227778.png)
    #### artifacts
-   ![10](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/93BC7D0BBD754781B7AC3A2E43547473/4600)
- 
+   ![image-20240829144245463](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144245463.png)
 ### 启动界面
-    
-   ![10](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/0F718902E72B47139E19155C609CFBA8/4603)
+   ![image-20240829144314978](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144314978.png)
 ### 首页界面
-   ![登录界面](https://note.youdao.com/yws/public/resource/c231396963b8e88f57bc0f455afdcc9b/xmlnote/C3DBEC3FED104BA0B60ABB83515A5B21/4615)
+   ![image-20240829144336053](https://raw.githubusercontent.com/jphuang/blog/master/img/image-20240829144336053.png)
     
     
      启动地址是：http://127.0.0.1:8090  
      后台地址是： http://127.0.0.1:8090/admin    
      登录账号和密码是： admin/admin
-	
+
